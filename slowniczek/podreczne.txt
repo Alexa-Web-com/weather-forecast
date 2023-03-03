@@ -1,0 +1,7 @@
+Moja lokalizacja: 
+latitude: 54.48
+longitude: 18.52
+
+
+precipitation - opady atmosferyczne
+apparent temperatue = temperatura odczuwalna
