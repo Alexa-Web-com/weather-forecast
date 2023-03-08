@@ -1,0 +1,8 @@
+.daily_cntr {
+    max-width: 1024px;
+    margin: auto;
+    text-align: center;
+    /* background-color: rgb(132, 154, 253); */
+    padding: 1rem;
+    height: 10rem;
+}

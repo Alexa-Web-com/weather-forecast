@@ -1,0 +1,7 @@
+.day_cntr {
+    max-width: 1024px;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(253, 205, 132);
+    padding: 1rem;
+}
