@@ -27,47 +27,13 @@ const Head = (props) => {
         })
     }
 
-    // document.onkeydown = (e) => {
-    //     switch (e.keyCodeA) {
-    //         case 38:
-    //             moveUp();
-    //             break;
-    //         case 40:
-    //             moveDown();
-    //             break;
-    //         default:
-    //             break
-    //     }
-    // };
-
-    // const moveUp = () => {
-    //     //Check if there is another link above, if no, go to bottom
-    //     if ($(".selected").prev("p").length > 0) {
-    //       $(".selected")
-    //         .removeClass("selected")
-    //         .prev("p")
-    //         .addClass("selected")
-    //         .focus();
-    //     } 
-    // }
-
-    // const moveDown = () => {
-    //     // Check if there is another link under, if no, go to top
-    //     if ($(".selected").next("p").length > 0) {
-    //       $(".selected")
-    //         .removeClass("selected")
-    //         .next("p")
-    //         .addClass("selected")
-    //         .focus();
-    //     } 
-    // }
-
     return (
         <div className='head__cntr'>
             <h1 className='head__title'>Twoja pogoda</h1>
             <div className='head__city_wrapper'>
                 <div className='head__find_city_cntr'>
                     <input className='head__find_city_input'
+                        list='cityname'
                         autoComplete='off'
                         name='city'
                         type='text'
@@ -88,27 +54,13 @@ const Head = (props) => {
                         }
                         }
                     />
-                    <div className={props.dropDownList ? 'head__find_city_list' : 'head__find_city_list_hidden'}>
-                        {/* dropdown-menu */}
+                    <datalist className={props.dropDownList ? 'head__find_city_list' : 'head__find_city_list_hidden'} id='cityname'>
                         {props.location.city.length > 2 &&
                             cities
                                 .filter(item => item.name.toLowerCase().includes(props.location.city.toLowerCase()))
                                 .map((item, index) =>
-                                    <p className='head_find_city_list_city'
-                                        // dropdown-menu a
+                                    <option className='head_find_city_list_city'
                                         key={index}
-                                        // onKeyDown={(e) => {
-                                        //     let active = -1
-                                        //     if (e.keyCode == 40) {
-                                        //         if (active < item.length - 1) {
-                                        //             active++
-                                        //         }
-                                        //     } else if (e.keyCode == 38) {
-                                        //         if (active > -1) {
-                                        //             active--
-                                        //         }
-                                        //     }
-                                        // }}
                                         onClick={(e) => {
                                             props.setLocation(prevLocation => ({
                                                 ...prevLocation,
@@ -120,13 +72,9 @@ const Head = (props) => {
                                             props.setCity('')
                                         }}>
                                         {`${item.name}, ${item.country}`}
-                                    </p>)
-                            // && isCitySpinner
-                            // &&
-                            // <p>Szukam...</p>
-
+                                    </option>)
                         }
-                    </div>
+                    </datalist>
                     <div className='head__find_city_remove_cross'
                         onClick={(e) => {
                             props.setLocation(prevLocation => ({
