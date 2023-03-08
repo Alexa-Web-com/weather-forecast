@@ -1,8 +1,102 @@
-.daily_cntr {
+.daily__cntr {
     max-width: 1024px;
     margin: auto;
-    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     /* background-color: rgb(132, 154, 253); */
     padding: 1rem;
-    height: 10rem;
+    /* height: 10rem; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.daily__general_cntr {
+    flex: 1;
+    padding-left: 2rem;
+}
+
+.daily__general_desc {
+    padding-bottom: 1.5rem;
+}
+
+.daily__general_wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .daily_general_icon {
+    width: 7rem;
+    fill: white
+} */
+
+
+.daily__general_sky_and_temp {
+    padding-left: 1rem;
+}
+
+.daily__general_real {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+.daily__details_cntr {
+    flex: 1;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.daily__details_sun {
+    display: flex;
+    justify-content: center;
+}
+
+.daily__details_sun_elem {
+    display: flex;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+
+.daily_details_elem_icon {
+    width: 2rem;
+    margin-right: 1rem;
+}
+
+.daily__details_elem {
+    display: flex;
+}
+
+.daily__details_elem_left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.daily__details_elem_right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 1rem;
+}
+
+.daily__details_elem p {
+    line-height: 1.5rem;
+}
+
+.daily_general_params_value {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.daily__params_name {}
+
+.daily__params_value {
+    font-weight: 600;
 }

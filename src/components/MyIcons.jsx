@@ -9,6 +9,7 @@ import { ReactComponent as CloudRainIcon } from "../assets/icons/cloud-rain.svg"
 import { ReactComponent as CloudSleetIcon } from "../assets/icons/cloud-sleet.svg"
 import { ReactComponent as CloudSnowIcon } from "../assets/icons/cloud-snow.svg"
 import { ReactComponent as CloudSunIcon } from "../assets/icons/cloud-sun.svg"
+// import CloudSunIcon from "../assets/icons/cloud-sun.svg"
 import { ReactComponent as LightningIcon } from "../assets/icons/lightning.svg"
 import { ReactComponent as MoonIcon } from "../assets/icons/moon.svg"
 import { ReactComponent as SunIcon } from "../assets/icons/sun.svg"
@@ -29,6 +30,7 @@ const MyIcons = () => {
             <CloudSleetIcon />
             <CloudSnowIcon />
             <CloudSunIcon />
+            {/* <img src={CloudSunIcon} alt='wheather imaging' /> */}
             <LightningIcon />
             <MoonIcon />
             <SunIcon />

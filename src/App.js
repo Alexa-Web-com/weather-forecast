@@ -18,7 +18,9 @@ function App() {
   const [dropDownList, setDropDownList] = useState(false)
   const [data, setData] = useState()
 
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=${location.latitude}&longitude=${location.longitude}&hourly=temperature_2m,apparent_temperature,precipitation_probability,precipitation,rain,showers,snowfall,cloudcover,windspeed_10m,winddirection_10m&daily=apparent_temperature_max,apparent_temperature_min,sunrise,sunset,precipitation_sum&current_weather=true&timezone=auto`
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${location.latitude}&longitude=${location.longitude}&hourly=temperature_2m,apparent_temperature,precipitation_probability,precipitation,rain,showers,snowfall,pressure_msl,cloudcover,windspeed_10m,winddirection_10m&daily=apparent_temperature_max,apparent_temperature_min,sunrise,sunset,precipitation_sum&current_weather=true&timezone=auto`
+
+
 
 
   const [dataFromUrl, isSpinner] = useGetDataFromUrl(url, location.latitude, location.longitude)
