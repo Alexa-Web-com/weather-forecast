@@ -59,6 +59,7 @@
 .head_find_city_list_city {
     margin: 0;
     padding: 0.2rem;
+    list-style: none;
 }
 
 .head_find_city_list_city:hover {

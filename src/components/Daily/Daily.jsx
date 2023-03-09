@@ -61,9 +61,9 @@ const Daily = (props) => {
                         <p><span className='daily__params_value'>[6]</span><span className='hourly_units.temperature_2m daily__params_value'>[°C]</span></p>
                         <p><span className='hourly_units.temperature_2m daily__params_value'>[°C]</span></p>
                         <p><span className='daily__params_value'>[991.5]</span><span className='hourly_units.pressure_msl daily__params_value'>[hPa]</span></p>
-                        <p><span className='daily__params_value'>[6]</span><span className='windspeed_10m daily__params_value'>[km/h]</span><span className='hourly_units.winddirection_10m daily__params_value'>[° lub |^|]</span></p>
-                        <p><span className='daily__params_value'>[6]</span><span className='hourly_units.precipitation daily__params_value'>[mm]</span></p>
-                        <p><span className='daily__params_value'>[6]</span><span className='hourly_units.precipitation_probability daily__params_value'>[%]</span></p>
+                        <p><span className='daily__params_value'>[13]</span><span className='windspeed_10m daily__params_value'>[km/h]</span><span className='hourly_units.winddirection_10m daily__params_value'>[° lub |^|]</span></p>
+                        <p><span className='daily__params_value'>[20]</span><span className='hourly_units.precipitation daily__params_value'>[mm]</span></p>
+                        <p><span className='daily__params_value'>[40]</span><span className='hourly_units.precipitation_probability daily__params_value'>[%]</span></p>
                     </div>
                 </div>
             </div>

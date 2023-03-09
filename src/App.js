@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App"
       onClick={() => {
-        setDropDownList(false)
+        // setDropDownList(false)
         setCity('')
       }}
     >
