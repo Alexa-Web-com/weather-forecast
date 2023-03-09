@@ -6,8 +6,6 @@ export const useGetDataFromUrl = (url, lat, lng) => {
     const [isSpinner, setIsSpinner] = useState(false)
 
     useEffect(() => {
-
-
         const getDataAsync = async () => {
             setIsSpinner(true)
             try {

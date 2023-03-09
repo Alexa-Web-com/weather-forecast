@@ -1,0 +1,14 @@
+.byGeolocation__find_city_location_btn {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.byGeolocation__find_city_location_btn:focus {
+    border: 2px solid rgba(201, 132, 253, 0.684);
+}
+
+.byGeolocation__find_city_location_btn_logo {
+    padding-top: 0.15rem;
+}
