@@ -5,6 +5,7 @@ import Head from './components/Head/Head';
 import MyIcons from './components/MyIcons';
 import { useEffect, useState } from 'react';
 import { useGetDataFromUrl } from './utils/useGetDataFromUrl';
+import Test from './components/Test/Test';
 
 function App() {
   const [location, setLocation] = useState({
@@ -14,13 +15,10 @@ function App() {
     countryCode: '',
   })
 
-  const [city, setCity] = useState('')
   const [dropDownList, setDropDownList] = useState(false)
   const [data, setData] = useState()
 
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${location.latitude}&longitude=${location.longitude}&hourly=temperature_2m,apparent_temperature,precipitation_probability,precipitation,rain,showers,snowfall,pressure_msl,cloudcover,windspeed_10m,winddirection_10m&daily=apparent_temperature_max,apparent_temperature_min,sunrise,sunset,precipitation_sum&current_weather=true&timezone=auto`
-
-
 
 
   const [dataFromUrl, isSpinner] = useGetDataFromUrl(url, location.latitude, location.longitude)
@@ -29,23 +27,17 @@ function App() {
     setData(dataFromUrl)
   }, [dataFromUrl])
 
-  useEffect(() => {
-    console.log('data: ', data)
-  }, [data])
+  // useEffect(() => {
+  //   console.log('data: ', data)
+  // }, [data])
 
   return (
     <div className="App"
-      onClick={() => {
-        // setDropDownList(false)
-        setCity('')
-      }}
     >
       {/* <MyIcons /> */}
       <Head
         location={location}
         setLocation={setLocation}
-        city={city}
-        setCity={setCity}
         dropDownList={dropDownList}
         setDropDownList={setDropDownList}
       />
