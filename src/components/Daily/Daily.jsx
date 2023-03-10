@@ -22,13 +22,15 @@ const Daily = (props) => {
                                 <div className='daily__general_real'>
                                     <div className='daily__general_sky_desc'>[Pochmurno]</div>
                                     <div className='daily__general_temp'>
-                                        <span className='daily__general_temp_number daily_general_params_value'>{props.data.current_weather.temperature}</span><span className='daily__general_temp_number temperature_2m daily_general_params_value'> {props.data.hourly_units.temperature_2m}</span>
+                                        <span className='daily__general_temp_number daily_general_params_value'>{props.data.current_weather.temperature}</span>
+                                        <span className='daily__general_temp_number temperature_2m daily_general_params_value'> {props.data.hourly_units.temperature_2m}</span>
                                     </div>
                                 </div>
                                 <div className='daily__general_apparent '>
                                     <div className='daily__general_apparent_desc' >Odczuwalna temperatura:</div>
                                     <div className='daily__general__temp'>
-                                        <span className='daily__general_temp_number daily_general_params_value'>[5]</span><span className='daily__general_temp_number apparent_temperature daily_general_params_value'> {props.data.hourly_units.temperature_2m}</span>
+                                        <span className='daily__general_temp_number daily_general_params_value'>[H]</span>
+                                        <span className='daily__general_temp_number apparent_temperature daily_general_params_value'> {props.data.hourly_units.temperature_2m}</span>
                                     </div>
                                 </div>
                             </div>
@@ -54,20 +56,20 @@ const Daily = (props) => {
                         </div>
                         <div className="daily__details_elem">
                             <div className="daily__details_elem_left">
-                                <p className='daily__params_name'>Najwyższa temperatura: </p>
-                                <p className='daily__params_name'>Najniższa temperatura: </p>
+                                <p className='daily__params_name'>Odczuwalna temp. (min): </p>
+                                <p className='daily__params_name'>Odczuwalna temp. (max): </p>
                                 <p className='daily__params_name'>Ciśnienie: </p>
                                 <p className='daily__params_name'>Wiatr: </p>
                                 <p className='daily__params_name'>Suma opadów: </p>
                                 <p className='daily__params_name'>Prawdopodobieństwo opadów: </p>
                             </div>
                             <div className="daily__details_elem_right">
-                                <p><span className='daily__params_value'>[6]</span><span className='hourly_units.temperature_2m daily__params_value'> {props.data.hourly_units.temperature_2m}</span></p>
-                                <p><span className='daily__params_value'>[4]</span><span className='hourly_units.temperature_2m daily__params_value'> {props.data.hourly_units.temperature_2m}</span></p>
-                                <p><span className='daily__params_value'>[991.5]</span><span className='hourly_units.pressure_msl daily__params_value'> {props.data.hourly_units.pressure_msl}</span></p>
-                                <p><span className='daily__params_value'>[13]</span><span className='windspeed_10m daily__params_value'> {props.data.hourly_units.windspeed_10m}</span><span className='hourly_units.winddirection_10m daily__params_value'>[° lub |^|]</span></p>
-                                <p><span className='daily__params_value'>[20]</span><span className='hourly_units.precipitation daily__params_value'> {props.data.hourly_units.precipitation}</span></p>
-                                <p><span className='daily__params_value'>[40]</span><span className='hourly_units.precipitation_probability daily__params_value'> {props.data.hourly_units.precipitation_probability}</span></p>
+                                <p><span className='daily__params_value'>[H]</span><span className='hourly_units.temperature_2m daily__params_value'> {props.data.hourly_units.temperature_2m}</span></p>
+                                <p><span className='daily__params_value'>[H]</span><span className='hourly_units.temperature_2m daily__params_value'> {props.data.hourly_units.temperature_2m}</span></p>
+                                <p><span className='daily__params_value'>[H]</span><span className='hourly_units.pressure_msl daily__params_value'> {props.data.hourly_units.pressure_msl}</span></p>
+                                <p><span className='daily__params_value'>[H]</span><span className='windspeed_10m daily__params_value'> {props.data.hourly_units.windspeed_10m}</span><span className='hourly_units.winddirection_10m daily__params_value'>[° lub |^|]</span></p>
+                                <p><span className='daily__params_value'>[H]</span><span className='hourly_units.precipitation daily__params_value'> {props.data.hourly_units.precipitation}</span></p>
+                                <p><span className='daily__params_value'>[H]</span><span className='hourly_units.precipitation_probability daily__params_value'> {props.data.hourly_units.precipitation_probability}</span></p>
                             </div>
                         </div>
                     </div>
