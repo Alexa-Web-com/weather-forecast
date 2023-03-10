@@ -13,7 +13,7 @@ const Head = (props) => {
             <div className='head__city_wrapper'>
                 <div className='head__find_city_cntr'>
                     <ByCityName
-                        location={props.location} />
+                        setLocation={props.setLocation} />
                     <ByGeolocation
                         setLocation={props.setLocation} />
                 </div>
