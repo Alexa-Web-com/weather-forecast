@@ -9,7 +9,6 @@ import Select from 'react-select'
 const ByCityName = (props) => {
 
     const [input, setInput] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
 
     const options1 = input.length < 2
         ? []
