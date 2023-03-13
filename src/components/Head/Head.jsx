@@ -1,5 +1,6 @@
 import './Head.css'
 import cities from 'cities.json'
+import { DICT } from '../../utils/dict'
 
 import ByCityName from './ByCityName/ByCityName'
 import ByGeolocation from './ByGeolocation/ByGeolocation'
@@ -9,11 +10,12 @@ const Head = (props) => {
 
     return (
         <div className='head__cntr'>
-            <h1 className='head__title'>Twoja pogoda</h1>
+            <h1 className='head__title'>{DICT[props.lang].headTitle}</h1>
             <div className='head__city_wrapper'>
                 <div className='head__find_city_cntr'>
                     <ByCityName
-                        setLocation={props.setLocation} />
+                        setLocation={props.setLocation}
+                        lang={props.lang} />
                     <ByGeolocation
                         setLocation={props.setLocation} />
                 </div>
@@ -22,19 +24,19 @@ const Head = (props) => {
                         cities.find(item => item.name === props.location.city && item.country === props.location.countryCode)
                         &&
                         <div className='head__choosen_geolocation_data'>
-                            <p>Twoje miasto:</p>
+                            <p>{DICT[props.lang].headYourCity}</p>
                             <h1 className='head__choosen_location_value'>{`${props.location.city}, ${props.location.countryCode}`}</h1>
                         </div>
                     }
                     {!props.location.city && props.location.latitude && props.location.latitude &&
                         <div className='head__choosen_geolocation_data'>
-                            <p>Twoje współrzędne:</p>
+                            <p>{DICT[props.lang].headYourCoordinates}</p>
                             <h3 className='head__choosen_geolocation_coordinates' >
-                                <span className='head__choosen_geolocation_coordinates_name'>szerokość: </span>
+                                <span className='head__choosen_geolocation_coordinates_name'>{DICT[props.lang].latitude}</span>
                                 <span className='head__choosen_geolocation_coordinates_value'>{props.location.latitude}</span>
                             </h3>
                             <h3 className='head__choosen_geolocation_coordinates'>
-                                <span className='head__choosen_geolocation_coordinates_name'>długość: </span>
+                                <span className='head__choosen_geolocation_coordinates_name'>{DICT[props.lang].longitude}</span>
                                 <span className='head__choosen_geolocation_coordinates_value'>{props.location.longitude}</span>
                             </h3>
                         </div>
