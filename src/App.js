@@ -37,11 +37,11 @@ function App() {
     setData(dataFromUrl)
   }, [dataFromUrl])
 
-  useEffect(() => {
-    console.log('data: ', data)
-  }, [data])
+  // useEffect(() => {
+  //   console.log('data: ', data)
+  // }, [data])
 
-  const lang = "pl"
+  const lang = "en"
 
   return (
     <div className="App"
@@ -54,7 +54,9 @@ function App() {
       />
       <Daily
         data={data}
-        lang={lang} />
+        lang={lang}
+        dataFromUrl={dataFromUrl}
+      />
       <Hourly
         lang={lang} />
     </div>

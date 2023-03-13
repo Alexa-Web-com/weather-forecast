@@ -1,10 +1,9 @@
 import './ByCityName.css'
 import cities from 'cities.json'
 import { useEffect, useState } from 'react'
-
-
 import React from 'react'
 import Select from 'react-select'
+import { DICT } from '../../../utils/dict'
 
 const ByCityName = (props) => {
 
@@ -30,7 +29,7 @@ const ByCityName = (props) => {
             <Select
                 onInputChange={(inputValue) => setInput(inputValue)}
                 options={options1}
-                placeholder='Wpisz miejscowość (min. 3 znaki)'
+                placeholder={DICT[props.lang].byCityNamePlaceholder}
                 value=''
 
                 menuIsOpen={input.length > 1}

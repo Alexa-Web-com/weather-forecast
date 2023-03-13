@@ -44,6 +44,9 @@
     padding-bottom: 1rem;
 }
 
+.daily__general_sky_desc {
+    font-style: italic;
+}
 
 .daily__details_cntr {
     flex: 1;

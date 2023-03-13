@@ -1,6 +1,6 @@
 import './Head.css'
 import cities from 'cities.json'
-import { DICT } from '../../dict'
+import { DICT } from '../../utils/dict'
 
 import ByCityName from './ByCityName/ByCityName'
 import ByGeolocation from './ByGeolocation/ByGeolocation'
@@ -14,7 +14,8 @@ const Head = (props) => {
             <div className='head__city_wrapper'>
                 <div className='head__find_city_cntr'>
                     <ByCityName
-                        setLocation={props.setLocation} />
+                        setLocation={props.setLocation}
+                        lang={props.lang} />
                     <ByGeolocation
                         setLocation={props.setLocation} />
                 </div>
