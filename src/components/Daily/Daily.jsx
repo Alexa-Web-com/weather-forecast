@@ -3,6 +3,7 @@ import sunriseIcon from '../../assets/icons/sunrise.svg'
 import sunsetIcon from '../../assets/icons/sunset.svg'
 
 import { ReactComponent as CloudSunIcon } from "../../assets/icons/cloud-sun.svg"
+import { wheathercode } from '../../utils/wheathercode'
 
 // import cloudSunIcon from '../../assets/icons/cloud-sun.svg'
 
@@ -20,7 +21,7 @@ const Daily = (props) => {
                             {/* <img src={cloudSunIcon} alt='wheather imaging' className='daily_general_icon' /> */}
                             <div className='daily__general_sky_and_temp'>
                                 <div className='daily__general_real'>
-                                    <div className='daily__general_sky_desc'>[Pochmurno]</div>
+                                    <div className='daily__general_sky_desc'>{wheathercode[props.data.current_weather.weathercode]}</div>
                                     <div className='daily__general_temp'>
                                         <span className='daily__general_temp_number daily_general_params_value'>{props.data.current_weather.temperature}</span>
                                         <span className='daily__general_temp_number temperature_2m daily_general_params_value'> {props.data.hourly_units.temperature_2m}</span>
