@@ -45,6 +45,7 @@ function App() {
     console.log('data: ', data)
   }, [data])
 
+  const lang = "pl"
 
   return (
     <div className="App"
@@ -53,10 +54,13 @@ function App() {
       <Head
         location={location}
         setLocation={setLocation}
+        lang={lang}
       />
       <Daily
-        data={data} />
-      <Hourly />
+        data={data}
+        lang={lang} />
+      <Hourly
+        lang={lang} />
     </div>
   );
 }
