@@ -1,18 +1,89 @@
-.hourly_cntr {
-    max-width: 1024px;
-    margin: auto;
-    text-align: center;
-    /* background-color: rgb(201, 132, 253); */
-    padding: 1rem;
-    height: 10rem;
-
-}
-
-.hourly_wrapper {
+.hourly__cntr {
     max-width: 1024px;
     margin: auto;
     text-align: center;
     /* background-color: rgb(201, 132, 253); */
     padding: 1rem;
     display: flex;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.hourly__wrapper {
+    max-width: 1024px;
+    margin: auto;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.hourly__day_details {
+    /* background-color: rgb(125, 218, 250); */
+    background-color: rgb(214, 250, 163);
+    border: 1px solid blueviolet;
+    border-radius: 0.2rem;
+    height: 1.5rem;
+}
+
+.hourly__day_cntr {
+    display: flex;
+}
+
+.hourly__hours_cntr {
+    display: flex;
+}
+
+.hourly__hour_cntr_day,
+.hourly__hour_cntr_night {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 1px solid blue;
+    border-radius: 0.2rem;
+    margin: 0.1rem;
+    width: 4.5rem;
+    line-height: 2rem;
+    padding-bottom: 1rem;
+}
+
+
+.hourly__hour_cntr_day {
+    background-color: white;
+
+}
+
+.hourly__hour_cntr_night {
+    background-color: rgb(202, 202, 202);
+}
+
+.hourly__hour_el_day,
+.hourly__hour_el_night {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.hourly__hour_el_day {
+    background-color: blueviolet;
+}
+
+.hourly__hour_el_night {
+    background-color: rgb(77, 22, 130);
+}
+
+.hourly__precipitation_el {
+    background-color: lavender;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hourly__hour_wind {
+    line-height: 1rem;
+    padding-top: 0.7rem;
+    padding-bottom: 1rem;
 }

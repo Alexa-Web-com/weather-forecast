@@ -6,24 +6,11 @@ import sunsetIcon from '../../assets/icons/sunset.svg'
 import { weathercode } from '../../utils/weathercode'
 import { DICT } from '../../utils/dict'
 import { GET_HOURS_MINUTES } from '../../utils/getHoursMinutes'
-import { Component, useEffect, useState } from 'react'
-
-import { ReactComponent as CloudDrizzleIcon } from "../../assets/icons/cloud-drizzle.svg"
-import { ReactComponent as CloudFogIcon } from "../../assets/icons/cloud-fog.svg"
-import { ReactComponent as CloudLightningRainIcon } from "../../assets/icons/cloud-lightning-rain.svg"
-import { ReactComponent as CloudLightningIcon } from "../../assets/icons/cloud-lightning.svg"
-import { ReactComponent as CloudMoonIcon } from "../../assets/icons/cloud-moon.svg"
-import { ReactComponent as CloudRainHeavyIcon } from "../../assets/icons/cloud-rain-heavy.svg"
-import { ReactComponent as CloudRainIcon } from "../../assets/icons/cloud-rain.svg"
-import { ReactComponent as CloudSleetIcon } from "../../assets/icons/cloud-sleet.svg"
-import { ReactComponent as CloudSnowIcon } from "../../assets/icons/cloud-snow.svg"
-import { ReactComponent as CloudSunIcon } from "../../assets/icons/cloud-sun.svg"
-import cloudSunIcon from "../../assets/icons/cloud-sun.svg"
-import { ReactComponent as LightningIcon } from "../../assets/icons/lightning.svg"
-import { ReactComponent as MoonIcon } from "../../assets/icons/moon.svg"
-import { ReactComponent as SunIcon } from "../../assets/icons/sun.svg"
+import { getHour } from '../../utils/getHours'
+import { useEffect, useState } from 'react'
 
 import WeatherIcon from '../WeatherIcon/WeatherIcon'
+import { getDirectionArr } from '../../utils/getDirectionArr'
 
 import arrowN from '../../assets/arrows/arrowN.svg'
 import arrowNE from '../../assets/arrows/arrowNE.svg'
@@ -77,7 +64,9 @@ const Daily = (props) => {
                         <div className='daily__general_wrapper'>
                             <WeatherIcon
                                 weathercode={props.data.current_weather.weathercode}
-                            // weathercode={1}
+                                hour={getHour(props.data.current_weather.time)}
+                                fill='white'
+                                width='8rem'
                             />
                             <div className='daily__general_sky_and_temp'>
                                 <div className='daily__general_real'>
@@ -130,8 +119,7 @@ const Daily = (props) => {
                                 <p><span className='daily__params_value'>{props.data.daily.apparent_temperature_max[0]}</span><span className='hourly_units.temperature_2m daily__params_value'> {props.data.hourly_units.temperature_2m}</span></p>
                                 <p><span className='daily__params_value'>{props.data.hourly.pressure_msl[timeIndex]}</span><span className='hourly_units.pressure_msl daily__params_value'> {props.data.hourly_units.pressure_msl}</span></p>
                                 <p><span className='daily__params_value'>{props.data.hourly.windspeed_10m[timeIndex]}</span><span className='windspeed_10m daily__params_value'> {props.data.hourly_units.windspeed_10m} </span>
-                                    <img src={directionArr(props.data.hourly.winddirection_10m[timeIndex])} alt='wind direction arrow' />
-                                    {/* <span className='hourly_units.winddirection_10m daily__params_value'> {`(${props.data.hourly.winddirection_10m[timeIndex]})°`}</span> */}
+                                    <img src={getDirectionArr(props.data.hourly.winddirection_10m[timeIndex])} alt='wind direction arrow' />
                                 </p>
                                 <p><span className='daily__params_value'>{props.data.hourly.precipitation[timeIndex]}</span><span className='hourly_units.precipitation daily__params_value'> {props.data.hourly_units.precipitation}</span></p>
                                 <p><span className='daily__params_value'>{props.data.hourly.precipitation_probability[timeIndex]}</span><span className='hourly_units.precipitation_probability daily__params_value'> {props.data.hourly_units.precipitation_probability}</span></p>

@@ -1,15 +1,15 @@
 import { ReactComponent as CloudDrizzleIcon } from "../../assets/icons/cloud-drizzle.svg"
 import { ReactComponent as CloudFogIcon } from "../../assets/icons/cloud-fog.svg"
 import { ReactComponent as CloudLightningRainIcon } from "../../assets/icons/cloud-lightning-rain.svg"
-import { ReactComponent as CloudLightningIcon } from "../../assets/icons/cloud-lightning.svg"
+// import { ReactComponent as CloudLightningIcon } from "../../assets/icons/cloud-lightning.svg"
 import { ReactComponent as CloudMoonIcon } from "../../assets/icons/cloud-moon.svg"
 import { ReactComponent as CloudRainHeavyIcon } from "../../assets/icons/cloud-rain-heavy.svg"
 import { ReactComponent as CloudRainIcon } from "../../assets/icons/cloud-rain.svg"
 import { ReactComponent as CloudSleetIcon } from "../../assets/icons/cloud-sleet.svg"
 import { ReactComponent as CloudSnowIcon } from "../../assets/icons/cloud-snow.svg"
 import { ReactComponent as CloudSunIcon } from "../../assets/icons/cloud-sun.svg"
-import cloudSunIcon from "../../assets/icons/cloud-sun.svg"
-import { ReactComponent as LightningIcon } from "../../assets/icons/lightning.svg"
+// import cloudSunIcon from "../../assets/icons/cloud-sun.svg"
+// import { ReactComponent as LightningIcon } from "../../assets/icons/lightning.svg"
 import { ReactComponent as MoonIcon } from "../../assets/icons/moon.svg"
 import { ReactComponent as SunIcon } from "../..//assets/icons/sun.svg"
 
@@ -17,22 +17,19 @@ import './WeatherIcon.css'
 
 const WeatherIcon = (props) => {
 
-    const dayTime = new Date()
-    const hour = dayTime.getHours()
-
     let weatherIcon = ''
     switch (props.weathercode) {
         case 0:
-            weatherIcon = hour > 6 && hour < 20 ? SunIcon : MoonIcon
+            weatherIcon = props.hour > 5 && props.hour < 21 ? SunIcon : MoonIcon
             break;
         case 1:
-            weatherIcon = hour > 6 && hour < 20 ? CloudSunIcon : CloudMoonIcon
+            weatherIcon = props.hour > 5 && props.hour < 21 ? CloudSunIcon : CloudMoonIcon
             break;
         case 2:
-            weatherIcon = CloudSunIcon
+            weatherIcon = props.hour > 5 && props.hour < 21 ? CloudSunIcon : CloudMoonIcon
             break;
         case 3:
-            weatherIcon = CloudSunIcon
+            weatherIcon = props.hour > 5 && props.hour < 21 ? CloudSunIcon : CloudMoonIcon
             break;
         case 45:
             weatherIcon = CloudFogIcon
@@ -57,7 +54,6 @@ const WeatherIcon = (props) => {
             break;
         case 61:
             weatherIcon = CloudRainIcon
-            // weatherIcon = 'test61'
             break;
         case 63:
             weatherIcon = CloudRainIcon
@@ -113,7 +109,7 @@ const WeatherIcon = (props) => {
 
     const WeatherIcon = weatherIcon
 
-    return <WeatherIcon />
+    return <WeatherIcon style={{ fill: props.fill ? props.fill : 'black', width: props.width ? props.width : '2rem' }} />
 }
 
 export default WeatherIcon
