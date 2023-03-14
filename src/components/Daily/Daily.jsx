@@ -5,8 +5,7 @@ import sunsetIcon from '../../assets/icons/sunset.svg'
 // import { ReactComponent as CloudSunIcon } from "../../assets/icons/cloud-sun.svg"
 import { weathercode } from '../../utils/weathercode'
 import { DICT } from '../../utils/dict'
-import { GET_HOURS_MINUTES } from '../../utils/getHoursMinutes'
-import { getHour } from '../../utils/getHours'
+import { getHourMinutes, getHour } from '../../utils/getDateTime'
 import { useEffect, useState } from 'react'
 
 import WeatherIcon from '../WeatherIcon/WeatherIcon'
@@ -93,7 +92,7 @@ const Daily = (props) => {
                                 <img src={sunriseIcon} alt='wheather imaging' className='daily_details_elem_icon' />
                                 <div>
                                     <p >{DICT[props.lang].dailySunrise}</p>
-                                    <p className='daily__params_value'>{GET_HOURS_MINUTES(props.data.daily.sunrise[0])}</p>
+                                    <p className='daily__params_value'>{getHourMinutes(props.data.daily.sunrise[0])}</p>
                                 </div>
                             </div>
                             <div className='daily__details_sun_elem'>
@@ -101,7 +100,7 @@ const Daily = (props) => {
 
                                 <div>
                                     <p>{DICT[props.lang].dailySunset}</p>
-                                    <p className='daily__params_value'>{GET_HOURS_MINUTES(props.data.daily.sunset[0])}</p>
+                                    <p className='daily__params_value'>{getHourMinutes(props.data.daily.sunset[0])}</p>
                                 </div>
                             </div>
                         </div>

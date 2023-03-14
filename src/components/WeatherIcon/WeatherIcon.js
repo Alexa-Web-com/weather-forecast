@@ -20,16 +20,16 @@ const WeatherIcon = (props) => {
     let weatherIcon = ''
     switch (props.weathercode) {
         case 0:
-            weatherIcon = props.hour > 5 && props.hour < 21 ? SunIcon : MoonIcon
+            weatherIcon = props.hour > 5 && props.hour < 19 ? SunIcon : MoonIcon
             break;
         case 1:
-            weatherIcon = props.hour > 5 && props.hour < 21 ? CloudSunIcon : CloudMoonIcon
+            weatherIcon = props.hour > 5 && props.hour < 19 ? CloudSunIcon : CloudMoonIcon
             break;
         case 2:
-            weatherIcon = props.hour > 5 && props.hour < 21 ? CloudSunIcon : CloudMoonIcon
+            weatherIcon = props.hour > 5 && props.hour < 19 ? CloudSunIcon : CloudMoonIcon
             break;
         case 3:
-            weatherIcon = props.hour > 5 && props.hour < 21 ? CloudSunIcon : CloudMoonIcon
+            weatherIcon = props.hour > 5 && props.hour < 19 ? CloudSunIcon : CloudMoonIcon
             break;
         case 45:
             weatherIcon = CloudFogIcon

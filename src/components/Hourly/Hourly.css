@@ -3,7 +3,6 @@
     margin: auto;
     text-align: center;
     display: flex;
-    display: flex;
     flex-direction: column;
 
 }
@@ -63,7 +62,7 @@
 }
 
 .hourly__hour_el_day {
-    background-color: blueviolet;
+    background-color: rgb(210, 103, 249);
 }
 
 .hourly__hour_el_night {
