@@ -1,6 +1,7 @@
 import './Head.css'
 import cities from 'cities.json'
 import { DICT } from '../../utils/dict'
+import emoji from '../../assets/logo.svg'
 
 import ByCityName from './ByCityName/ByCityName'
 import ByGeolocation from './ByGeolocation/ByGeolocation'
@@ -10,7 +11,7 @@ const Head = (props) => {
 
     return (
         <div className='head__cntr'>
-            <h1 className='head__title'>{DICT[props.lang].headTitle}</h1>
+            <h1 className='head__title'><span>{DICT[props.lang].headTitle} </span><img src={emoji} alt='emoji' width='18rem' /></h1>
             <div className='head__city_wrapper'>
                 <div className='head__find_city_cntr'>
                     <ByCityName

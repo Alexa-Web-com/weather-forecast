@@ -1,7 +1,6 @@
 .App {
-    background: red;
+    background: rgb(201, 132, 253);
     background-image: linear-gradient(to bottom, aqua, rgb(132, 154, 253), rgb(201, 132, 253), rgb(201, 132, 253), rgb(201, 132, 253), rgb(145, 97, 183), rgb(91, 62, 115));
     max-width: 1024px;
     margin: auto;
-    margin-top: 2rem;
 }

@@ -1,0 +1,37 @@
+.spinner_cntr {
+    background: rgb(201, 132, 253);
+    background-image: linear-gradient(to bottom, aqua, aqua, rgb(132, 154, 253), rgb(201, 132, 253), rgb(145, 97, 183), rgb(91, 62, 115));
+    max-width: 1024px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20rem;
+    height: 100vh;
+}
+
+.spinner_img {
+    border: 1.5rem solid rgb(214, 250, 163);
+    border-top: 1.5rem solid rgb(77, 22, 130);
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    animation: spin 2s linear infinite;
+}
+
+.spinner_text {
+    color: white;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

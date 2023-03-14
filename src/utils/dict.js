@@ -29,6 +29,8 @@ export const DICT = {
         hourlyFriday: "Friday",
         hourlySaturday: "Saturday",
         hourlySunday: "Sunday",
+
+        spinnerText: "Loading...",
     },
 
     pl: {
@@ -61,5 +63,8 @@ export const DICT = {
         hourlyFriday: "Piątek",
         hourlySaturday: "Sobota",
         hourlySunday: "Niedziela",
+
+        spinnerText: "Ładuję...",
+
     }
 } 
