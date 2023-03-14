@@ -21,7 +21,7 @@ const Head = (props) => {
                 </div>
                 <div className='head__choosen_location_cntr'>
                     {props.location.city &&
-                        cities.find(item => item.name === props.location.city && item.country === props.location.countryCode)
+                        cities.find(item => item.name === props.location.city)
                         &&
                         <div className='head__choosen_geolocation_data'>
                             <p>{DICT[props.lang].headYourCity}</p>
@@ -41,12 +41,12 @@ const Head = (props) => {
                             </h3>
                         </div>
                     }
-                    {!props.location.country && !props.location.latitude && !props.location.latitude &&
+                    {/* {!props.location.country && !props.location.latitude && !props.location.latitude &&
                         <div className='head__choosen_geolocation_data'>
                             <p>Twoje miejsce:</p>
                             <h2 className='head__not_choosen_location'> </h2>
                         </div>
-                    }
+                    } */}
                 </div>
             </div>
         </div >

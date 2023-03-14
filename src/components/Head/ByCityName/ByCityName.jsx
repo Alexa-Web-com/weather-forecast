@@ -9,10 +9,10 @@ const ByCityName = (props) => {
 
     const [input, setInput] = useState('')
 
-    const options1 = input.length < 2
+    const options1 = input.length < 1
         ? []
         : cities
-            .filter(city => city.name.toLowerCase().includes(input.toLowerCase()))
+            .filter(city => city.name.toLowerCase().includes(input.toLowerCase()) || city.country.toLowerCase().includes(input.toLowerCase()))
             .slice(0, 30)
             .map((city, index) => ({
                 value: index,
