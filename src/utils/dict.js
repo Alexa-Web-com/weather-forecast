@@ -22,13 +22,15 @@ export const DICT = {
         dailyPrecipitation: "Precipitation: ",
         dailyPrecipitationProbability: "Precipitation probability: ",
 
-        hourlyMonday: "Monday",
-        hourlyTuesday: "Tuesday",
-        hourlyWednesday: "Wednesday",
-        hourlyThursday: "Thursday",
-        hourlyFriday: "Friday",
-        hourlySaturday: "Saturday",
-        hourlySunday: "Sunday",
+        weekDay: {
+            1: "Monday",
+            2: "Tuesday",
+            3: "Wednesday",
+            4: "Thursday",
+            5: "Friday",
+            6: "Saturday",
+            0: "Sunday",
+        },
 
         spinnerText: "Loading...",
     },
@@ -56,15 +58,18 @@ export const DICT = {
         dailyPrecipitation: "Suma opadów: ",
         dailyPrecipitationProbability: "Prawdopodobieństwo opadów: ",
 
-        hourlyMonday: "Poniedziałek",
-        hourlyTuesday: "Wtorek",
-        hourlyWednesday: "Środa",
-        hourlyThursday: "Czwartek",
-        hourlyFriday: "Piątek",
-        hourlySaturday: "Sobota",
-        hourlySunday: "Niedziela",
+        weekDay: {
+            1: "Poniedziałek",
+            2: "Wtorek",
+            3: "Środa",
+            4: "Czwartek",
+            5: "Piątek",
+            6: "Sobota",
+            0: "Niedziela",
+        },
 
         spinnerText: "Ładuję...",
 
     }
-} 
+}
+

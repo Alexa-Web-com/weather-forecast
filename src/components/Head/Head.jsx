@@ -42,12 +42,6 @@ const Head = (props) => {
                             </h3>
                         </div>
                     }
-                    {/* {!props.location.country && !props.location.latitude && !props.location.latitude &&
-                        <div className='head__choosen_geolocation_data'>
-                            <p>Twoje miejsce:</p>
-                            <h2 className='head__not_choosen_location'> </h2>
-                        </div>
-                    } */}
                 </div>
             </div>
         </div >

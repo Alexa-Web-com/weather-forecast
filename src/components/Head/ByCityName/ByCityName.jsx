@@ -1,6 +1,6 @@
 import './ByCityName.css'
 import cities from 'cities.json'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import React from 'react'
 import Select from 'react-select'
 import { DICT } from '../../../utils/dict'
@@ -31,7 +31,6 @@ const ByCityName = (props) => {
                 options={options1}
                 placeholder={DICT[props.lang].byCityNamePlaceholder}
                 value=''
-
                 menuIsOpen={input.length > 1}
                 onChange={(elem) => {
                     console.log(elem)
@@ -49,7 +48,8 @@ const ByCityName = (props) => {
                         ...baseStyles,
                         border: 'none',
                         outline: state.isFocused ? '2px solid rgba(201, 132, 253, 0.684)' : 'none',
-                        width: '22rem',
+                        width: '18rem',
+                        fontSize: '0.95rem'
                     }),
                 }}
                 classNames={{

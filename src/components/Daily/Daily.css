@@ -1,20 +1,15 @@
 .daily__cntr {
-    max-width: 1024px;
-    margin: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    /* background-color: rgb(132, 154, 253); */
     padding: 1rem;
-    /* height: 10rem; */
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     text-align: center;
 }
 
 .daily__general_cntr {
     flex: 1;
     padding-left: 2rem;
+    padding-bottom: 2rem;
 }
 
 .daily__general_desc {
@@ -24,16 +19,6 @@
 .daily__general_wrapper {
     display: flex;
     justify-content: space-around;
-}
-
-/* .daily_general_icon {
-    width: 7rem;
-    fill: white
-} */
-
-
-.daily__general_sky_and_temp {
-    padding-left: 1rem;
 }
 
 .daily__general_real {
@@ -107,4 +92,26 @@
 
 .daily__params_value {
     font-weight: 600;
+}
+
+
+@media screen and (max-width: 768px) {
+    .daily__cntr {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .daily__general_cntr {
+        padding-left: 0;
+    }
+
+    .daily__general_wrapper {
+        justify-content: center;
+    }
+
+    .daily__general_sky_and_temp {
+        padding-left: 1rem;
+    }
 }

@@ -32,17 +32,15 @@ function App() {
         latitude: approxLat,
         longitude: approxLng,
       }))
-      // }
     }
   }, [approxLat, approxLng])
-
-
 
   const [dataFromUrl, isSpinner] = useGetDataFromUrl(getUrl(location.latitude, location.longitude), location.latitude, location.longitude)
 
   useEffect(() => {
     setData(dataFromUrl)
     localStorage.setItem('location', JSON.stringify(location))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataFromUrl])
 
   return (
@@ -71,7 +69,6 @@ function App() {
         </div>
       }
     </>
-
   )
 
 }

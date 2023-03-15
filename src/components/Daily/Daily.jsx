@@ -2,7 +2,6 @@ import './Daily.css'
 import sunriseIcon from '../../assets/icons/sunrise.svg'
 import sunsetIcon from '../../assets/icons/sunset.svg'
 
-// import { ReactComponent as CloudSunIcon } from "../../assets/icons/cloud-sun.svg"
 import { weathercode } from '../../utils/weathercode'
 import { DICT } from '../../utils/dict'
 import { getHourMinutes, getHour } from '../../utils/getDateTime'
@@ -10,17 +9,6 @@ import { useEffect, useState } from 'react'
 
 import WeatherIcon from '../WeatherIcon/WeatherIcon'
 import { getDirectionArr } from '../../utils/getDirectionArr'
-
-import arrowN from '../../assets/arrows/arrowN.svg'
-import arrowNE from '../../assets/arrows/arrowNE.svg'
-import arrowE from '../../assets/arrows/arrowE.svg'
-import arrowSE from '../../assets/arrows/arrowSE.svg'
-import arrowS from '../../assets/arrows/arrowS.svg'
-import arrowSW from '../../assets/arrows/arrowSW.svg'
-import arrowW from '../../assets/arrows/arrowW.svg'
-import arrowNW from '../../assets/arrows/arrowNW.svg'
-
-// import cloudSunIcon from '../../assets/icons/cloud-sun.svg'
 
 const Daily = (props) => {
     const [timeIndex, setTimeIndex] = useState()
@@ -36,27 +24,9 @@ const Daily = (props) => {
         }
     }, [props.data])
 
-
-    const directionArr = (degree) => {
-        let direction = ''
-        if (degree < 22) { direction = arrowN }
-        else if (degree < 67) { direction = arrowNE }
-        else if (degree < 112) { direction = arrowE }
-        else if (degree < 157) { direction = arrowSE }
-        else if (degree < 202) { direction = arrowS }
-        else if (degree < 247) { direction = arrowSW }
-        else if (degree < 292) { direction = arrowW }
-        else if (degree < 337) { direction = arrowNW }
-        else { direction = arrowN }
-        return direction
-    }
-
-
     return (
-
         <div className='daily' >
-            {props.data ?
-
+            {props.data &&
                 <div className='daily__cntr' >
                     <div className='daily__general_cntr'>
                         <h2 className='daily__general_desc'>{DICT[props.lang].dailyCurrentWeather}</h2>
@@ -126,53 +96,6 @@ const Daily = (props) => {
                         </div>
                     </div>
                 </div>
-
-
-                :
-
-
-                <div className='daily__cntr' >
-                    <div className='daily__general_cntr'>
-                        <h2 className='daily__general_desc'>Aktualna pogoda</h2>
-
-                    </div>
-                    <div className='daily__details_cntr'>
-                        <div className='daily__details_sun'>
-                            <div className='daily__details_sun_elem'>
-                                <img src={sunriseIcon} alt='wheather imaging' className='daily_details_elem_icon' />
-                                <div>
-                                    <p >Wschód słońca</p>
-                                </div>
-                            </div>
-                            <div className='daily__details_sun_elem'>
-                                <img src={sunsetIcon} alt='wheather imaging' className='daily_details_elem_icon' />
-                                <div>
-                                    <p>Zachód słońca</p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div className="daily__details_elem">
-                            <div className="daily__details_elem_left">
-                                <p className='daily__params_name'>Najwyższa temperatura: </p>
-                                <p className='daily__params_name'>Najniższa temperatura: </p>
-                                <p className='daily__params_name'>Ciśnienie: </p>
-                                <p className='daily__params_name'>Wiatr: </p>
-                                <p className='daily__params_name'>Suma opadów: </p>
-                                <p className='daily__params_name'>Prawdopodobieństwo opadów: </p>
-                            </div>
-                            <div className="daily__details_elem_right">
-                                <p><span className='daily__params_value'> ... </span><span className='hourly_units.temperature_2m daily__params_value'>°C</span></p>
-                                <p><span className='daily__params_value'> ... </span><span className='hourly_units.temperature_2m daily__params_value'>°C</span></p>
-                                <p><span className='daily__params_value'> ... </span><span className='hourly_units.pressure_msl daily__params_value'>hPa</span></p>
-                                <p><span className='daily__params_value'> ... </span><span className='windspeed_10m daily__params_value'>km/h</span><span className='hourly_units.winddirection_10m daily__params_value'></span></p>
-                                <p><span className='daily__params_value'> ... </span><span className='hourly_units.precipitation daily__params_value'>mm</span></p>
-                                <p><span className='daily__params_value'> ... </span><span className='hourly_units.precipitation_probability daily__params_value'>%</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             }
         </div>
     )
