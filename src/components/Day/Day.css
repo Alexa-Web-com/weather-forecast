@@ -1,34 +1,29 @@
-/* .day_cntr {
-    max-width: 1024px;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-} */
-
 .day__wrapper {
-    max-width: 1024px;
-    margin: auto;
     text-align: center;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
 }
 
 .day__day_details {
-    /* background-color: rgb(125, 218, 250); */
     background-color: rgb(214, 250, 163);
     border: 1px solid blueviolet;
     border-radius: 0.2rem;
     height: 1.5rem;
+    width: 100%;
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: center;
 }
 
-.day__day_cntr {
-    display: flex;
+.day__carets {
+    margin-left: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 
 .day__hours_cntr {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .day__hour_cntr_day,
@@ -39,11 +34,11 @@
     border: 1px solid blue;
     border-radius: 0.2rem;
     margin: 0.1rem;
-    width: 4.5rem;
+    width: 100%;
+    min-width: 3.2rem;
     line-height: 2rem;
     padding-bottom: 1rem;
 }
-
 
 .day__hour_cntr_day {
     background-color: white;
@@ -61,7 +56,9 @@
 }
 
 .day__hour_el_day {
-    background-color: rgb(210, 103, 249);
+    /* background-color: rgb(210, 103, 249); */
+    background-color: rgb(32, 154, 219);
+    /* color: black */
 }
 
 .day__hour_el_night {
@@ -83,3 +80,44 @@
     padding-top: 0.7rem;
     padding-bottom: 1rem;
 }
+
+
+@media screen and (max-width: 768px) {
+
+    .day__hour_cntr_day,
+    .day__hour_cntr_night {
+        display: flex;
+        flex-direction: row;
+        margin: 0.1rem;
+        width: 2.5rem;
+        padding-bottom: 0;
+        padding-right: 1rem;
+        min-width: 100%;
+    }
+
+    .day__hour_el_day,
+    .day__hour_el_night {
+        margin-bottom: 0;
+        padding-top: 0.8rem;
+        min-width: 4rem;
+    }
+
+    .day__hours_cntr {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .day__wheather_icon,
+    .day__precipitation_el,
+    .day__temperatue,
+    .day__hour_wind {
+        margin: auto;
+    }
+
+    .day__precipitation_el {
+        width: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {}

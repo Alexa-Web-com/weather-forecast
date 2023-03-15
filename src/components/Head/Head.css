@@ -1,5 +1,4 @@
 .head__cntr {
-    max-width: 1024px;
     margin: auto;
     text-align: center;
     padding: 1rem;
@@ -20,8 +19,6 @@
     display: flex;
     padding: 1rem;
 }
-
-
 
 .head__choosen_location_value {
     width: 20rem;
@@ -49,4 +46,17 @@
 
 .head__not_choosen_location {
     width: 20rem;
+}
+
+@media screen and (max-width: 768px) {
+    .head__city_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .head__find_city_cntr {
+        padding: 1rem 0;
+    }
 }
