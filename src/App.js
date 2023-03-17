@@ -2,26 +2,17 @@ import './App.css';
 import Daily from './components/Daily/Daily';
 import Hourly from './components/Hourly/Hourly';
 import Head from './components/Head/Head';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { useGetDataFromUrl } from './utils/useGetDataFromUrl';
 import { useGetApproximateLocation } from './utils/useGetApproximateLocation'
-import { LANG, getUrl } from './utils/const'
+import { getUrl } from './utils/const'
 import Spinner from './components/Spinner/Spinner';
 import Footer from './components/Footer/Footer';
-
+import { ContextLocation } from './context/ContextLocation';
 
 function App() {
-  const [location, setLocation] = useState(JSON.parse(localStorage.getItem('location'))
-    ||
-  {
-    city: '',
-    latitude: '',
-    longitude: '',
-    countryCode: '',
-  })
 
-  const [data, setData] = useState()
-
+  const [location, setLocation] = useContext(ContextLocation)
 
   const [approxLat, approxLng] = useGetApproximateLocation(location)
 
@@ -33,12 +24,12 @@ function App() {
         longitude: approxLng,
       }))
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [approxLat, approxLng])
 
   const [dataFromUrl, isSpinner] = useGetDataFromUrl(getUrl(location.latitude, location.longitude), location.latitude, location.longitude)
 
   useEffect(() => {
-    setData(dataFromUrl)
     localStorage.setItem('location', JSON.stringify(location))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataFromUrl])
@@ -47,24 +38,12 @@ function App() {
     <>
       {isSpinner
         ?
-        <Spinner
-          lang={LANG}
-        />
+        <Spinner />
         :
         <div className="App">
-          <Head
-            location={location}
-            setLocation={setLocation}
-            lang={LANG}
-          />
-          <Daily
-            data={data}
-            lang={LANG}
-            dataFromUrl={dataFromUrl}
-          />
-          <Hourly
-            data={data}
-            lang={LANG} />
+          <Head />
+          <Daily />
+          <Hourly />
           <Footer />
         </div>
       }

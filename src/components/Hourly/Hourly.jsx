@@ -1,73 +1,56 @@
 import './Hourly.css'
 import Day from '../Day/Day'
-
 import { useEffect, useState } from 'react'
 
-
 const Hourly = (props) => {
-
-
 
     const [openedDayTab, setOpenedDayTab] = useState(0)
 
     useEffect(() => {
-        const scroll = () => {
-            const section = document.getElementById('day');
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        };
-
-        scroll()
+        if (openedDayTab !== 0) {
+            const scroll = () => {
+                const section = document.getElementById('day');
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            };
+            scroll()
+        }
     }, [openedDayTab])
 
     return (
         <div className='hourly__cntr'
             id='day'>
             <Day
-                lang={props.lang}
-                data={props.data}
                 dayIndex={0}
                 openedDayTab={openedDayTab}
                 setOpenedDayTab={setOpenedDayTab}
             />
             <Day
-                lang={props.lang}
-                data={props.data}
                 dayIndex={24}
                 openedDayTab={openedDayTab}
                 setOpenedDayTab={setOpenedDayTab}
             />
             <Day
-                lang={props.lang}
-                data={props.data}
                 dayIndex={48}
                 openedDayTab={openedDayTab}
                 setOpenedDayTab={setOpenedDayTab}
 
             />
             <Day
-                lang={props.lang}
-                data={props.data}
                 dayIndex={72}
                 openedDayTab={openedDayTab}
                 setOpenedDayTab={setOpenedDayTab}
             />
             <Day
-                lang={props.lang}
-                data={props.data}
                 dayIndex={96}
                 openedDayTab={openedDayTab}
                 setOpenedDayTab={setOpenedDayTab}
             />
             <Day
-                lang={props.lang}
-                data={props.data}
                 dayIndex={120}
                 openedDayTab={openedDayTab}
                 setOpenedDayTab={setOpenedDayTab}
             />
             <Day
-                lang={props.lang}
-                data={props.data}
                 dayIndex={144}
                 openedDayTab={openedDayTab}
                 setOpenedDayTab={setOpenedDayTab}
