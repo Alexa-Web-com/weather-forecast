@@ -1,11 +1,15 @@
 import './ByCityName.css'
 import cities from 'cities.json'
 import { useState } from 'react'
-import React from 'react'
+import { useContext } from 'react'
 import Select from 'react-select'
 import { DICT } from '../../../utils/dict'
+import { LANG } from '../../../utils/const'
+import { ContextLocation } from '../../../context/ContextLocation'
 
 const ByCityName = (props) => {
+
+    const [, setLocation] = useContext(ContextLocation)
 
     const [input, setInput] = useState('')
 
@@ -29,12 +33,12 @@ const ByCityName = (props) => {
             <Select
                 onInputChange={(inputValue) => setInput(inputValue)}
                 options={options1}
-                placeholder={DICT[props.lang].byCityNamePlaceholder}
+                placeholder={DICT[LANG].byCityNamePlaceholder}
                 value=''
                 menuIsOpen={input.length > 1}
                 onChange={(elem) => {
                     console.log(elem)
-                    props.setLocation(prevLocation => ({
+                    setLocation(prevLocation => ({
                         ...prevLocation,
                         city: elem.name,
                         latitude: elem.lat,
