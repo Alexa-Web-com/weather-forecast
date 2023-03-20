@@ -30,7 +30,7 @@ function App() {
   const [dataFromUrl, isSpinner] = useGetDataFromUrl(getUrl(location.latitude, location.longitude), location.latitude, location.longitude)
 
   useEffect(() => {
-    localStorage.setItem('location', JSON.stringify(location))
+    // localStorage.setItem('location', JSON.stringify(location))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataFromUrl])
 
