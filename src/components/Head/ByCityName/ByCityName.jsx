@@ -37,7 +37,6 @@ const ByCityName = (props) => {
                 value=''
                 menuIsOpen={input.length > 1}
                 onChange={(elem) => {
-                    console.log(elem)
                     setLocation(prevLocation => ({
                         ...prevLocation,
                         city: elem.name,

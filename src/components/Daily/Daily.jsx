@@ -19,8 +19,6 @@ const Daily = (props) => {
 
     useEffect(() => {
         if (data?.hourly.time) {
-            console.log('data: ', data);
-
             const currentTime = new Date()
             const timeIndex = data.hourly.time.findIndex(item => item > currentTime.toISOString())
 
