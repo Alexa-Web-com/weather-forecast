@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/wheather-forecast/static/css/main.7f1da0f5.css",
+    "main.js": "/wheather-forecast/static/js/main.497fec16.js",
+    "static/media/cloud-snow.svg": "/wheather-forecast/static/media/cloud-snow.ceb8e9cf242e766c7ad0bf4aa763a7d8.svg",
+    "static/media/cloud-sleet.svg": "/wheather-forecast/static/media/cloud-sleet.a2e1332718a573d6755203080df36766.svg",
+    "static/media/moon.svg": "/wheather-forecast/static/media/moon.4dfa23e5ff80f5d6795fbb2683dd07f9.svg",
+    "index.html": "/wheather-forecast/index.html",
+    "static/media/cloud-lightning-rain.svg": "/wheather-forecast/static/media/cloud-lightning-rain.b051cc7c08be881830809ffcfa50f6aa.svg",
+    "static/media/cloud-sun.svg": "/wheather-forecast/static/media/cloud-sun.6ddbedb3259a153f5df23f3169b0841c.svg",
+    "static/media/sun.svg": "/wheather-forecast/static/media/sun.0bbaaf5c8432c226f4bcb3720f476535.svg",
+    "static/media/sunrise.svg": "/wheather-forecast/static/media/sunrise.44cc85b37f5bdf1a52906627184a247e.svg",
+    "static/media/sunset.svg": "/wheather-forecast/static/media/sunset.0c3cb551864c29282ebedc69bd1d5999.svg",
+    "static/media/cloud-drizzle.svg": "/wheather-forecast/static/media/cloud-drizzle.9165ad17feefeb6f3627dceb0a0f901b.svg",
+    "static/media/cloud-rain-heavy.svg": "/wheather-forecast/static/media/cloud-rain-heavy.a8eb260b08605f96d35757c8ca547a2c.svg",
+    "static/media/cloud-rain.svg": "/wheather-forecast/static/media/cloud-rain.b4f7884899fabdf042773be3dca5de53.svg",
+    "static/media/logo.svg": "/wheather-forecast/static/media/logo.9fe73e7dae2a19ac38d87d7843839e1e.svg",
+    "static/media/location.svg": "/wheather-forecast/static/media/location.299126e774aad36e981dc5983133c3e9.svg",
+    "static/media/cloud-moon.svg": "/wheather-forecast/static/media/cloud-moon.93c09c84c907968f06c5e50b2085535c.svg",
+    "static/media/cloud-fog.svg": "/wheather-forecast/static/media/cloud-fog.7ec090c2387c64140e043b73b572b986.svg",
+    "static/media/arrowE.svg": "/wheather-forecast/static/media/arrowE.2bd4657691a348b7d168aa564dda8b1e.svg",
+    "static/media/arrowW.svg": "/wheather-forecast/static/media/arrowW.ef02da4279102360fbcd4f5dce77648b.svg",
+    "static/media/arrowN.svg": "/wheather-forecast/static/media/arrowN.2880ac58706978b4f08e471b244ec844.svg",
+    "static/media/arrowS.svg": "/wheather-forecast/static/media/arrowS.52875a882998d69ded3e4f18cc378d1e.svg",
+    "static/media/caret-down.svg": "/wheather-forecast/static/media/caret-down.dbf503a09b5d9d0066499daa8c362081.svg",
+    "static/media/caret-up.svg": "/wheather-forecast/static/media/caret-up.5d51cf8c7c6bfd491c15b7dbb789d4d6.svg",
+    "static/media/arrowSE.svg": "/wheather-forecast/static/media/arrowSE.139519bd990af74d41377b8c5ffa77a0.svg",
+    "static/media/arrowNE.svg": "/wheather-forecast/static/media/arrowNE.c28bd5d050d4d4b620f1476dc2558827.svg",
+    "static/media/arrowSW.svg": "/wheather-forecast/static/media/arrowSW.0ed0c5eedf19dfbfcf684a0a1bafe1b5.svg",
+    "static/media/arrowNW.svg": "/wheather-forecast/static/media/arrowNW.0f6eb346ea35f241ce4f87b75a1741c0.svg",
+    "main.7f1da0f5.css.map": "/wheather-forecast/static/css/main.7f1da0f5.css.map",
+    "main.497fec16.js.map": "/wheather-forecast/static/js/main.497fec16.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f1da0f5.css",
+    "static/js/main.497fec16.js"
+  ]
+}
