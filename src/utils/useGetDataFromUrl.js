@@ -3,13 +3,13 @@ import { useAlert } from 'react-alert'
 
 
 export const useGetDataFromUrl = (url) => {
-
     const [dataFromUrl, setDataFromUrl] = useState()
     const [isSpinner, setIsSpinner] = useState(false)
 
     const alert = useAlert()
 
     useEffect(() => {
+
         const getDataAsync = async () => {
             setIsSpinner(true)
             try {
@@ -23,9 +23,9 @@ export const useGetDataFromUrl = (url) => {
                 setIsSpinner(false)
             }
         }
-
-        getDataAsync()
-
+        if (url) {
+            getDataAsync()
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [url])
 

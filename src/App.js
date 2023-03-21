@@ -21,13 +21,15 @@ function App() {
       if (approxCoordinatesData) {
         setLocation(prevLocation => ({
           ...prevLocation,
-          latitude: approxCoordinatesData.lat.toFixed(2),
-          longitude: approxCoordinatesData.lng.toFixed(2),
+          latitude: Number(approxCoordinatesData.latitude).toFixed(2),
+          longitude: Number(approxCoordinatesData.longitude).toFixed(2),
         }))
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [approxCoordinatesData])
+
+
 
   const [weatherDataFromUrl, isSpinner] = useGetDataFromUrl(getUrl(location.latitude, location.longitude))
 
