@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wheather-forecast/static/css/main.7f1da0f5.css",
-    "main.js": "/wheather-forecast/static/js/main.7428a563.js",
+    "main.js": "/wheather-forecast/static/js/main.5c65dc0b.js",
     "static/media/cloud-snow.svg": "/wheather-forecast/static/media/cloud-snow.ceb8e9cf242e766c7ad0bf4aa763a7d8.svg",
     "static/media/cloud-sleet.svg": "/wheather-forecast/static/media/cloud-sleet.a2e1332718a573d6755203080df36766.svg",
     "static/media/moon.svg": "/wheather-forecast/static/media/moon.4dfa23e5ff80f5d6795fbb2683dd07f9.svg",
@@ -29,10 +29,10 @@
     "static/media/arrowSW.svg": "/wheather-forecast/static/media/arrowSW.0ed0c5eedf19dfbfcf684a0a1bafe1b5.svg",
     "static/media/arrowNW.svg": "/wheather-forecast/static/media/arrowNW.0f6eb346ea35f241ce4f87b75a1741c0.svg",
     "main.7f1da0f5.css.map": "/wheather-forecast/static/css/main.7f1da0f5.css.map",
-    "main.7428a563.js.map": "/wheather-forecast/static/js/main.7428a563.js.map"
+    "main.5c65dc0b.js.map": "/wheather-forecast/static/js/main.5c65dc0b.js.map"
   },
   "entrypoints": [
     "static/css/main.7f1da0f5.css",
-    "static/js/main.7428a563.js"
+    "static/js/main.5c65dc0b.js"
   ]
 }
