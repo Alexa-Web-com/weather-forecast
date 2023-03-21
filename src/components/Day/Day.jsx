@@ -17,9 +17,9 @@ const Day = (props) => {
         <div className='day__wrapper'>
             {props.openedDayTab === props.dayIndex
                 ?
-                <p className='day__day_details'
+                <p className='day__day_details_opened'
                     onClick={() => props.setOpenedDayTab(-1)}
-                    style={{ color: 'rgb(171, 0, 108)', fontWeight: 'bold' }}
+                    style={{ fontWeight: 'bold' }}
                 >
                     <span>{`${DICT[LANG].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly.time[props.dayIndex])}`}</span>
                     <img className='day__carets' src={caretUp} alt='caret up' width='20px' fill='mediumvioletred' />
@@ -32,8 +32,8 @@ const Day = (props) => {
                     <img className='day__carets' src={caretDown} alt='caret down' width='20px' />
                 </p>
             }
-            {props.openedDayTab === props.dayIndex &&
-                <div className='day__hours_cntr'>
+            {props.openedDayTab === props.dayIndex ?
+                <div className='day__hours_cntr_active'>
                     {weatherData?.hourly.time.map((item, index) => index % 2 !== 1 && index > props.dayIndex - 1 && index < props.dayIndex + 24
                         ?
                         <div className={getHour(item) > 5 && getHour(item) < 19 ? 'day__hour_cntr_day' : 'day__hour_cntr_night'} key={index}>
@@ -56,6 +56,8 @@ const Day = (props) => {
                         ''
                     )}
                 </div>
+                :
+                <div className='day__hours_cntr'></div>
             }
         </div>
     )

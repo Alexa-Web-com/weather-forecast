@@ -4,8 +4,9 @@
     flex-direction: column;
 }
 
-.day__day_details {
-    background-color: rgb(214, 250, 163);
+.day__day_details,
+.day__day_details_opened {
+    background-color: rgb(91, 251, 166);
     border: 1px solid blueviolet;
     border-radius: 0.2rem;
     height: 1.5rem;
@@ -13,6 +14,15 @@
     margin-top: 0.8rem;
     display: flex;
     justify-content: center;
+}
+
+.day__day_details_opened {
+    background-color: rgb(195, 245, 126);
+    border: 2px solid blueviolet;
+}
+
+.day__day_details:hover {
+    border: 2px solid blueviolet;
 }
 
 .day__carets {
@@ -23,7 +33,19 @@
 .day__hours_cntr {
     display: flex;
     width: 100%;
+    /* height: 0px; */
+    opacity: 0;
     justify-content: space-between;
+    transition: all 3s ease;
+}
+
+.day__hours_cntr_active {
+    display: flex;
+    width: 100%;
+    /* height: 250px; */
+    opacity: 100;
+    justify-content: space-between;
+    transition: all 2s ease;
 }
 
 .day__hour_cntr_day,
@@ -57,7 +79,7 @@
 
 .day__hour_el_day {
     /* background-color: rgb(210, 103, 249); */
-    background-color: rgb(32, 154, 219);
+    background-color: rgb(33, 154, 220);
     /* color: black */
 }
 
