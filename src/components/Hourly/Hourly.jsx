@@ -2,7 +2,7 @@ import './Hourly.css'
 import Day from '../Day/Day'
 import { useEffect, useState } from 'react'
 
-const Hourly = (props) => {
+const Hourly = () => {
 
     const [openedDayTab, setOpenedDayTab] = useState(0)
 

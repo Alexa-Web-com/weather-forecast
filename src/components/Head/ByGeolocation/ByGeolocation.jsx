@@ -3,7 +3,7 @@ import location_logo from '../../../assets/icons/location.svg'
 import { useContext } from 'react'
 import { ContextLocation } from '../../../context/ContextLocation'
 
-const ByGeolocation = (props) => {
+const ByGeolocation = () => {
 
     const [, setLocation] = useContext(ContextLocation)
 
