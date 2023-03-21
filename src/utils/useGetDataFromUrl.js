@@ -1,8 +1,6 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useAlert } from 'react-alert'
-import { ContextData } from '../context/ContextWeatherData';
 
-let isOnlyOnce = true
 
 export const useGetDataFromUrl = (url) => {
 
