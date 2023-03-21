@@ -124,7 +124,7 @@
         min-width: 4rem;
     }
 
-    .day__hours_cntr {
+    .day__hours_cntr_active {
         display: flex;
         flex-direction: column;
         width: 100%;
