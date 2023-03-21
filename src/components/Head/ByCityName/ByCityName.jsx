@@ -7,7 +7,7 @@ import { DICT } from '../../../utils/dict'
 import { LANG } from '../../../utils/const'
 import { ContextLocation } from '../../../context/ContextLocation'
 
-const ByCityName = (props) => {
+const ByCityName = () => {
 
     const [, setLocation] = useContext(ContextLocation)
 

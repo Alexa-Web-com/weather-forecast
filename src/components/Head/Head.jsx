@@ -9,10 +9,8 @@ import ByCityName from './ByCityName/ByCityName'
 import ByGeolocation from './ByGeolocation/ByGeolocation'
 
 
-const Head = (props) => {
-
+const Head = () => {
     const [location,] = useContext(ContextLocation)
-
 
     return (
         <div className='head__cntr'>
