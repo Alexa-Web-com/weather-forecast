@@ -49,6 +49,11 @@
 }
 
 @media screen and (max-width: 768px) {
+
+    .head__cntr {
+        padding: 1rem 0;
+    }
+
     .head__city_wrapper {
         display: flex;
         flex-direction: column;
