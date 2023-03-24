@@ -2,7 +2,7 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <p className='footer'>© 2023 Alexa-Web development. All rights reserved.</p>
+        <p className='footer'>Copyright © 2023 alexa-web.com</p>
     )
 }
 

@@ -1,3 +1,5 @@
+export const languages = ['en', 'es', 'pl']
+
 export const DICT = {
     en: {
         headTitle: "Your wheather",
@@ -6,7 +8,7 @@ export const DICT = {
         latitude: "latitude: ",
         longitude: "longitude: ",
 
-        byCityNamePlaceholder: "Enter a city (min. 3 characters)",
+        byCityNamePlaceholder: "Enter a city (min. 2 characters)",
 
         dailyCurrentWeather: "Current weather",
         dailyTemperature: "Temperature:",
@@ -35,6 +37,42 @@ export const DICT = {
         spinnerText: "Loading...",
     },
 
+    es: {
+        headTitle: "Tu tiempo",
+        headYourCity: "Tu ciudad:",
+        headYourCoordinates: "Tus coordenadas:",
+        latitude: "latitud: ",
+        longitude: "longitud: ",
+
+        byCityNamePlaceholder: "Introduce una ciudad (mín. 2 chars.)",
+
+        dailyCurrentWeather: "Tiempo actual",
+        dailyTemperature: "Temperatura:",
+        dailyApparentTemperature: "Temperatura aparente:",
+
+        dailySunrise: "Amanecer",
+        dailySunset: "Atardecer",
+
+        dailyApparentTemperatureMin: "Temp. aparente (min): ",
+        dailyApparentTemperatureMax: "Temp. aparente (max): ",
+        dailyPressure: "Presión: ",
+        dailyWind: "Viento: ",
+        dailyPrecipitation: "Precipitación: ",
+        dailyPrecipitationProbability: "Probabilidad de precipitación: ",
+
+        weekDay: {
+            1: "Lunes",
+            2: "Martes",
+            3: "Miércoles",
+            4: "Jueves",
+            5: "Viernes",
+            6: "Sábado",
+            0: "Domingo",
+        },
+
+        spinnerText: "Cargando...",
+    },
+
     pl: {
         headTitle: "Twoja pogoda",
         headYourCity: "Twoje miasto:",
@@ -42,7 +80,7 @@ export const DICT = {
         latitude: "szerokość: ",
         longitude: "długość: ",
 
-        byCityNamePlaceholder: "Wpisz miejscowość (min. 3 znaki)",
+        byCityNamePlaceholder: "Wpisz miejscowość (min. 2 znaki)",
 
         dailyCurrentWeather: "Aktualna pogoda",
         dailyTemperature: "Temperatura:",
@@ -69,7 +107,8 @@ export const DICT = {
         },
 
         spinnerText: "Ładuję...",
+    },
 
-    }
+
 }
 

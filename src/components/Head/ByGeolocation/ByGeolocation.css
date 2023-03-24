@@ -3,6 +3,7 @@
     height: 2.4rem;
     border: none;
     border-radius: 0.25rem;
+    margin-left: 1rem;
 }
 
 .byGeolocation__find_city_location_btn:focus {

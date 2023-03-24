@@ -1,12 +1,15 @@
 import './Spinner.css'
 import { DICT } from '../../utils/dict'
-import { LANG } from '../../utils/const'
+import { useContext } from 'react'
+import { ContextLanguage } from '../../context/ContextLanguage'
 
-const Spinner = (props) => {
+const Spinner = () => {
+    const [lang,] = useContext(ContextLanguage)
+
     return (
         <div className='spinner_cntr'>
             <div className="spinner_img"></div>
-            <p className="spinner_text">{DICT[LANG].spinnerText}</p>
+            <p className="spinner_text">{DICT[lang].spinnerText}</p>
         </div>
     )
 }

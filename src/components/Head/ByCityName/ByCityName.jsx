@@ -4,12 +4,13 @@ import { useState } from 'react'
 import { useContext } from 'react'
 import Select from 'react-select'
 import { DICT } from '../../../utils/dict'
-import { LANG } from '../../../utils/const'
 import { ContextLocation } from '../../../context/ContextLocation'
+import { ContextLanguage } from '../../../context/ContextLanguage'
 
 const ByCityName = () => {
 
     const [, setLocation] = useContext(ContextLocation)
+    const [lang,] = useContext(ContextLanguage)
 
     const [input, setInput] = useState('')
 
@@ -33,9 +34,10 @@ const ByCityName = () => {
             <Select
                 onInputChange={(inputValue) => setInput(inputValue)}
                 options={options1}
-                placeholder={DICT[LANG].byCityNamePlaceholder}
+                placeholder={DICT[lang].byCityNamePlaceholder}
                 value=''
                 menuIsOpen={input.length > 1}
+                components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                 onChange={(elem) => {
                     setLocation(prevLocation => ({
                         ...prevLocation,
@@ -52,7 +54,7 @@ const ByCityName = () => {
                         border: 'none',
                         outline: state.isFocused ? '2px solid rgba(201, 132, 253, 0.684)' : 'none',
                         width: '18rem',
-                        fontSize: '0.95rem'
+                        fontSize: '0.9rem'
                     }),
                 }}
                 classNames={{

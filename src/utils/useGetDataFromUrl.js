@@ -9,7 +9,6 @@ export const useGetDataFromUrl = (url) => {
     const alert = useAlert()
 
     useEffect(() => {
-
         const getDataAsync = async () => {
             setIsSpinner(true)
             try {

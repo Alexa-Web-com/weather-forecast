@@ -1,17 +1,18 @@
 import './Day.css'
 import { getDay, getDateMonth, getHourMinutes, getHour } from '../../utils/getDateTime'
 import { DICT } from '../../utils/dict'
-import { LANG } from '../../utils/const'
 import WeatherIcon from '../WeatherIcon/WeatherIcon'
 import { getDirectionArr } from '../../utils/getDirectionArr'
 import caretDown from '../../assets/carets/caret-down.svg'
 import caretUp from '../../assets/carets/caret-up.svg'
 import { useContext } from 'react'
 import { ContextWeatherData } from '../../context/ContextWeatherData'
+import { ContextLanguage } from '../../context/ContextLanguage'
 
 const Day = (props) => {
 
     const [weatherData,] = useContext(ContextWeatherData)
+    const [lang,] = useContext(ContextLanguage)
 
     return (
         <div className='day__wrapper'>
@@ -21,14 +22,14 @@ const Day = (props) => {
                     onClick={() => props.setOpenedDayTab(-1)}
                     style={{ fontWeight: 'bold' }}
                 >
-                    <span>{`${DICT[LANG].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly.time[props.dayIndex])}`}</span>
+                    <span>{`${DICT[lang].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly.time[props.dayIndex])}`}</span>
                     <img className='day__carets' src={caretUp} alt='caret up' width='20px' fill='mediumvioletred' />
                 </p>
                 :
                 <p className='day__day_details'
                     onClick={() => props.setOpenedDayTab(props.dayIndex)}
                 >
-                    <span>{`${DICT[LANG].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly.time[props.dayIndex])}`}</span>
+                    <span>{`${DICT[lang].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly.time[props.dayIndex])}`}</span>
                     <img className='day__carets' src={caretDown} alt='caret down' width='20px' />
                 </p>
             }

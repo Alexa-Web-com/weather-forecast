@@ -4,7 +4,8 @@ import Hourly from './components/Hourly/Hourly';
 import Head from './components/Head/Head';
 import { useContext, useEffect } from 'react';
 import { useGetDataFromUrl } from './utils/useGetDataFromUrl';
-import { getUrl, approxCoordinatesUrl } from './utils/const'
+import { approxCoordinatesUrl } from './utils/const'
+import { getUrl } from './utils/getUrl'
 import Spinner from './components/Spinner/Spinner';
 import Footer from './components/Footer/Footer';
 import { ContextLocation } from './context/ContextLocation';
@@ -18,6 +19,7 @@ function App() {
   const [approxCoordinatesData,] = useGetDataFromUrl(approxCoordinatesUrl)
 
   useEffect(() => {
+
     if (location.latitude.length === 0 && location.longitude.length === 0) {
       if (approxCoordinatesData) {
         setLocation(prevLocation => ({

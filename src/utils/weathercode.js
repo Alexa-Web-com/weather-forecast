@@ -1,4 +1,5 @@
 export const weathercode = {
+
     en: {
         0: "Clear sky",
 
@@ -42,6 +43,49 @@ export const weathercode = {
         99: "Thunderstorm ",
     },
 
+    es: {
+        0: "Cielo despejado",
+
+        1: "Parcialmente nublado",
+        2: "Parcialmente nublado",
+        3: "Parcialmente nublado",
+
+        45: "Niebla",
+        48: "Niebla",
+
+        51: "Llovizna",
+        53: "Llovizna",
+        55: "Llovizna",
+
+        56: "Llovizna",
+        57: "Llovizna",
+
+        61: "Lluvia",
+        63: "Lluvia",
+        65: "Lluvia",
+
+        66: "Lluvia helada",
+        67: "Lluvia helada",
+
+        71: "Nevada",
+        73: "Nevada",
+        75: "Nevada",
+        77: "Nevada",
+
+        80: "Chubascos de lluvia, ligeros",
+        81: "Chubascos de lluvia, moderados o fuertes",
+
+        82: "Chubascos de lluvia, violentos",
+
+        85: "Nevada",
+        86: "Nevada",
+
+        95: "Tormenta eléctrica",
+        96: "Tormenta eléctrica",
+
+        99: "Tormenta eléctrica",
+    },
+
     pl: {
         0: "Bezchmurnie",
 
@@ -83,5 +127,6 @@ export const weathercode = {
         96: "Burza",
 
         99: "Burza",
-    }
+    },
+
 }

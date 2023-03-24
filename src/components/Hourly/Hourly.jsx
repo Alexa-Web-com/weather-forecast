@@ -6,6 +6,8 @@ const Hourly = () => {
 
     const [openedDayTab, setOpenedDayTab] = useState(0)
 
+    const dayIndexes = [0, 24, 48, 72, 96, 120, 144]
+
     useEffect(() => {
         if (openedDayTab !== 0) {
             const scroll = () => {
@@ -19,42 +21,14 @@ const Hourly = () => {
     return (
         <div className='hourly__cntr'
             id='day'>
-            <Day
-                dayIndex={0}
-                openedDayTab={openedDayTab}
-                setOpenedDayTab={setOpenedDayTab}
-            />
-            <Day
-                dayIndex={24}
-                openedDayTab={openedDayTab}
-                setOpenedDayTab={setOpenedDayTab}
-            />
-            <Day
-                dayIndex={48}
-                openedDayTab={openedDayTab}
-                setOpenedDayTab={setOpenedDayTab}
-
-            />
-            <Day
-                dayIndex={72}
-                openedDayTab={openedDayTab}
-                setOpenedDayTab={setOpenedDayTab}
-            />
-            <Day
-                dayIndex={96}
-                openedDayTab={openedDayTab}
-                setOpenedDayTab={setOpenedDayTab}
-            />
-            <Day
-                dayIndex={120}
-                openedDayTab={openedDayTab}
-                setOpenedDayTab={setOpenedDayTab}
-            />
-            <Day
-                dayIndex={144}
-                openedDayTab={openedDayTab}
-                setOpenedDayTab={setOpenedDayTab}
-            />
+            {dayIndexes.map(dayIndex =>
+                <Day
+                    key={dayIndex}
+                    dayIndex={dayIndex}
+                    openedDayTab={openedDayTab}
+                    setOpenedDayTab={setOpenedDayTab}
+                />
+            )}
         </div>
     )
 }
