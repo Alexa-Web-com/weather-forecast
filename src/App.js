@@ -12,11 +12,16 @@ import { ContextLocation } from './context/ContextLocation';
 import { ContextWeatherData } from './context/ContextWeatherData';
 
 function App() {
-
   const [, setWeatherData] = useContext(ContextWeatherData)
   const [location, setLocation] = useContext(ContextLocation)
 
   const [approxCoordinatesData,] = useGetDataFromUrl(approxCoordinatesUrl)
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    })
+  }, [])
 
   useEffect(() => {
 
@@ -46,16 +51,17 @@ function App() {
 
   return (
     <>
-      {isSpinner
-        ?
-        <Spinner />
-        :
-        <div className="App">
-          <Head />
-          <Daily />
-          <Hourly />
-          <Footer />
-        </div>
+      {
+        !weatherDataFromUrl
+          ?
+          <Spinner />
+          :
+          <div className="App">
+            <Head />
+            <Daily />
+            <Hourly />
+            <Footer />
+          </div>
       }
     </>
   )

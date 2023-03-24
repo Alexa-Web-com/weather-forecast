@@ -38,7 +38,7 @@ export const DICT = {
     },
 
     es: {
-        headTitle: "Tu tiempo",
+        headTitle: "Tu clima",
         headYourCity: "Tu ciudad:",
         headYourCoordinates: "Tus coordenadas:",
         latitude: "latitud: ",
@@ -46,7 +46,7 @@ export const DICT = {
 
         byCityNamePlaceholder: "Introduce una ciudad (mín. 2 chars.)",
 
-        dailyCurrentWeather: "Tiempo actual",
+        dailyCurrentWeather: "Clima actual",
         dailyTemperature: "Temperatura:",
         dailyApparentTemperature: "Temperatura aparente:",
 

@@ -22,14 +22,14 @@ const Day = (props) => {
                     onClick={() => props.setOpenedDayTab(-1)}
                     style={{ fontWeight: 'bold' }}
                 >
-                    <span>{`${DICT[lang].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly.time[props.dayIndex])}`}</span>
+                    <span>{`${!DICT[lang].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])] ? 'Loading' : DICT[lang].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly.time[props.dayIndex])}`}</span>
                     <img className='day__carets' src={caretUp} alt='caret up' width='20px' fill='mediumvioletred' />
                 </p>
                 :
                 <p className='day__day_details'
                     onClick={() => props.setOpenedDayTab(props.dayIndex)}
                 >
-                    <span>{`${DICT[lang].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly.time[props.dayIndex])}`}</span>
+                    <span>{`${!DICT[lang].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])] ? 'Loading' : DICT[lang].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly.time[props.dayIndex])}`}</span>
                     <img className='day__carets' src={caretDown} alt='caret down' width='20px' />
                 </p>
             }

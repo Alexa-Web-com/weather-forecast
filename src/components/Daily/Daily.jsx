@@ -35,14 +35,14 @@ const Daily = () => {
                         <h2 className='daily__general_desc'>{DICT[lang].dailyCurrentWeather}</h2>
                         <div className='daily__general_wrapper'>
                             <WeatherIcon
-                                weathercode={weatherData.current_weather?.weathercode}
-                                hour={getHour(weatherData.current_weather?.time)}
+                                weathercode={weatherData.current_weather.weathercode}
+                                hour={getHour(weatherData.current_weather.time)}
                                 fill='white'
                                 width='8rem'
                             />
                             <div className='daily__general_sky_and_temp'>
                                 <div className='daily__general_real'>
-                                    <div className='daily__general_sky_desc'>{weathercode[lang][weatherData.current_weather?.weathercode]}</div>
+                                    <div className='daily__general_sky_desc'>{weathercode[lang][weatherData.current_weather.weathercode]}</div>
                                     <div className='daily__general_apparent_desc' >{DICT[lang].dailyTemperature}</div>
                                     <div className='daily__general_temp'>
                                         <span className='daily__general_temp_number daily_general_params_value'>{weatherData.current_weather.temperature}</span>
