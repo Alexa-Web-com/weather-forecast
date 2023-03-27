@@ -2,7 +2,7 @@ import './Head.css'
 import cities from 'cities.json'
 import { DICT, languages } from '../../utils/dict'
 import emoji from '../../assets/logo.svg'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { ContextLocation } from '../../context/ContextLocation'
 import { ContextLanguage } from '../../context/ContextLanguage'
 import ByCityName from './ByCityName/ByCityName'
@@ -17,7 +17,7 @@ const Head = () => {
         <div className='head__cntr'>
             <div className='head__language_cntr'>
                 {languages.map(language =>
-                    <Language language={language} />
+                    <Language key={language} language={language} />
                 )}
             </div>
             <h1 className='head__title'><span>{DICT[lang].headTitle} </span><img src={emoji} alt='emoji' width='18rem' /></h1>
