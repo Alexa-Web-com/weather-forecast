@@ -11,9 +11,13 @@
 }
 
 .spinner_img {
-    border: 1.5rem solid rgb(214, 250, 163);
-    border-top: 1.5rem solid rgb(77, 22, 130);
+    /* border: 1.5rem solid rgb(214, 250, 163);
+    border-top: 1.5rem solid rgb(77, 22, 130); */
+    border: 3rem solid rgb(214, 250, 163);
+    border-top: 3rem solid rgb(77, 22, 130);
     border-radius: 50%;
+    /* width: 6rem;
+    height: 6rem; */
     width: 6rem;
     height: 6rem;
     animation: spin 2s linear infinite;
@@ -44,9 +48,9 @@
     }
 
     .spinner_img {
-        border: 2rem solid rgb(214, 250, 163);
-        border-top: 2rem solid rgb(77, 22, 130);
-        width: 4rem;
-        height: 4rem;
+        /* border: 2rem solid rgb(214, 250, 163);
+        border-top: 2rem solid rgb(77, 22, 130); */
+        /* width: 4rem;
+        height: 4rem; */
     }
 }
