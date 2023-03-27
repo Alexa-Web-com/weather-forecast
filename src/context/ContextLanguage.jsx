@@ -4,7 +4,7 @@ import { languages } from "../utils/dict";
 export const ContextLanguage = createContext()
 
 export const ContextLanguageProvider = (props) => {
-    const langFromNavivgator = navigator.language.split('')[0] + navigator.language.split('')[1]
+    const langFromNavivgator = navigator.language.slice(0, 2)
 
     const [lang, setLang] = useState(langFromNavivgator === languages.find(lang => lang === langFromNavivgator) ? langFromNavivgator : 'en')
 
