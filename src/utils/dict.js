@@ -2,7 +2,7 @@ export const languages = ['en', 'es', 'pl']
 
 export const DICT = {
     en: {
-        headTitle: "Your wheather",
+        headTitle: "Your weather",
         headYourCity: "Your city:",
         headYourCoordinates: "Your coordinates:",
         latitude: "latitude: ",
