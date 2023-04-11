@@ -62,14 +62,14 @@ const Daily = () => {
                     <div className='daily__details_cntr'>
                         <div className='daily__details_sun'>
                             <div className='daily__details_sun_elem'>
-                                <img src={sunriseIcon} alt='wheather imaging' className='daily_details_elem_icon' />
+                                <img src={sunriseIcon} alt='weather imaging' className='daily_details_elem_icon' />
                                 <div>
                                     <p >{DICT[lang].dailySunrise}</p>
                                     <p className='daily__params_value'>{getHourMinutes(weatherData.daily.sunrise[0])}</p>
                                 </div>
                             </div>
                             <div className='daily__details_sun_elem'>
-                                <img src={sunsetIcon} alt='wheather imaging' className='daily_details_elem_icon' />
+                                <img src={sunsetIcon} alt='weather imaging' className='daily_details_elem_icon' />
 
                                 <div>
                                     <p>{DICT[lang].dailySunset}</p>

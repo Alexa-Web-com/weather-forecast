@@ -39,7 +39,7 @@ const Day = (props) => {
                         ?
                         <div className={getHour(item) > 5 && getHour(item) < 19 ? 'day__hour_cntr_day' : 'day__hour_cntr_night'} key={index}>
                             <p className={getHour(item) > 5 && getHour(item) < 19 ? 'day__hour_el_day' : 'day__hour_el_night'}>{getHourMinutes(item)}</p>
-                            <div className='day__wheather_icon'>
+                            <div className='day__weather_icon'>
                                 <WeatherIcon
                                     weathercode={weatherData.hourly.weathercode[index]}
                                     hour={getHour(item)}
