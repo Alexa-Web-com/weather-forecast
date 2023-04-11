@@ -37,7 +37,7 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [approxCoordinatesData])
 
-  const [weatherDataFromUrl, isSpinner] = useGetDataFromUrl(getUrl(location.latitude, location.longitude))
+  const [weatherDataFromUrl,] = useGetDataFromUrl(getUrl(location.latitude, location.longitude))
 
   useEffect(() => {
     if (location.latitude.length > 0 && location.longitude.length > 0) {
