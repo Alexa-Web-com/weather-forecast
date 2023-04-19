@@ -4,7 +4,7 @@ export const DICT = {
     en: {
         headTitle: "Your weather",
         headYourCity: "Your city:",
-        headYourCoordinates: "Your coordinates:",
+        headYourCoordinates: "Your current location:",
         latitude: "latitude: ",
         longitude: "longitude: ",
 
@@ -40,7 +40,7 @@ export const DICT = {
     es: {
         headTitle: "Tu clima",
         headYourCity: "Tu ciudad:",
-        headYourCoordinates: "Tus coordenadas:",
+        headYourCoordinates: "Su ubicación actual:",
         latitude: "latitud: ",
         longitude: "longitud: ",
 
@@ -76,7 +76,7 @@ export const DICT = {
     pl: {
         headTitle: "Twoja pogoda",
         headYourCity: "Twoje miasto:",
-        headYourCoordinates: "Twoje współrzędne:",
+        headYourCoordinates: "Twoja aktualna lokalizacja:",
         latitude: "szerokość: ",
         longitude: "długość: ",
 
