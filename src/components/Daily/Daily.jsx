@@ -33,8 +33,8 @@ const Daily = () => {
                         <h2 className='daily__general_desc'>{DICT[lang].dailyCurrentWeather}</h2>
                         <div className='daily__general_wrapper'>
                             <WeatherIcon
-                                weathercode={weatherData.current_weather.weathercode}
-                                hour={getHour(weatherData.current_weather.time)}
+                                weathercode={weatherData?.current_weather.weathercode}
+                                hour={getHour(weatherData?.current_weather.time)}
                                 fill='white'
                                 width='8rem'
                             />
