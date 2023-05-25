@@ -13,8 +13,8 @@ import { ReactComponent as SunIcon } from "../..//assets/icons/sun.svg"
 import './WeatherIcon.css'
 
 const WeatherIcon = (props) => {
-
     let weatherIcon = ''
+
     switch (props.weathercode) {
         case 0:
             weatherIcon = props.hour > 5 && props.hour < 19 ? SunIcon : MoonIcon
