@@ -1,23 +1,18 @@
 import './ByGeolocation.css'
 import location_logo from '../../../assets/icons/location.svg'
-import { useContext } from 'react'
-import { ContextLocation } from '../../../context/ContextLocation'
+import { useDispatch } from 'react-redux'
+import { changeLocationByGeolocation } from '../../../store/locationSlice'
 
 const ByGeolocation = () => {
-
-    const [, setLocation] = useContext(ContextLocation)
+    const dispatch = useDispatch()
 
     const geolocationClickHandler = () => {
         navigator.geolocation.getCurrentPosition((position) => {
             const lat = position.coords.latitude.toFixed(2);
             const lng = position.coords.longitude.toFixed(2);
-
-            setLocation(prevLocation => ({
-                ...prevLocation,
-                city: '',
+            dispatch(changeLocationByGeolocation({
                 latitude: lat,
                 longitude: lng,
-                countryCode: '',
             }))
         })
     }

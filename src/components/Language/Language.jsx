@@ -1,13 +1,14 @@
 import './Language.css'
-import { useContext } from 'react'
-import { ContextLanguage } from '../../context/ContextLanguage'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeLanguage } from '../../store/languageSlice'
 
 const Language = (props) => {
-    const [lang, setLang] = useContext(ContextLanguage)
+    const lang = useSelector((state) => state.language.currentLanguage)
+    const dispatch = useDispatch()
 
     return (
         <p className='head__language_el'
-            onClick={() => setLang(props.language)}
+            onClick={() => dispatch(changeLanguage(props.language))}
             style={{
                 backgroundColor: props.language === lang && 'rgb(145, 97, 183)',
                 color: props.language === lang && 'white'

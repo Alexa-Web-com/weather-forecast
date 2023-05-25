@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { ContextLanguageProvider } from './context/ContextLanguage';
-import { ContextWeatherDataProvider } from './context/ContextWeatherData';
-import { ContextLocationProvider } from './context/ContextLocation';
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
+import { store } from './store/store'
+import { Provider } from 'react-redux'
 
 const options = {
   position: positions.TOP_CENTER,
@@ -18,15 +17,11 @@ const options = {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AlertProvider template={AlertTemplate} {...options}>
-      <ContextLanguageProvider>
-        <ContextWeatherDataProvider>
-          <ContextLocationProvider>
-            <App />
-          </ContextLocationProvider>
-        </ContextWeatherDataProvider>
-      </ContextLanguageProvider>
-    </AlertProvider>
+    <Provider store={store}>
+      <AlertProvider template={AlertTemplate} {...options}>
+        <App />
+      </AlertProvider>
+    </Provider>
   </React.StrictMode>
 );
 

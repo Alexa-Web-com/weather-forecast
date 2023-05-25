@@ -1,26 +1,24 @@
 import './Daily.css'
 import sunriseIcon from '../../assets/icons/sunrise.svg'
 import sunsetIcon from '../../assets/icons/sunset.svg'
-
 import { weathercode } from '../../utils/weathercode'
 import { DICT } from '../../utils/dict'
 import { getHourMinutes, getHour } from '../../utils/getDateTime'
-import { useEffect, useState, useContext } from 'react'
-import { ContextWeatherData } from '../../context/ContextWeatherData'
-import { ContextLanguage } from '../../context/ContextLanguage'
+import { useEffect, useState, } from 'react'
 import WeatherIcon from '../WeatherIcon/WeatherIcon'
 import { getDirectionArr } from '../../utils/getDirectionArr'
+import { useSelector } from 'react-redux'
 
 const Daily = () => {
     const [timeIndex, setTimeIndex] = useState()
 
-    const [weatherData,] = useContext(ContextWeatherData)
-    const [lang,] = useContext(ContextLanguage)
+    const weatherData = useSelector((state) => state.weatherData.currentWeatherData)
+    const lang = useSelector((state) => state.language.currentLanguage)
 
     useEffect(() => {
-        if (weatherData?.hourly.time) {
+        if (weatherData?.hourly?.time) {
             const currentTime = new Date()
-            const timeIndex = weatherData.hourly.time.findIndex(item => item > currentTime.toISOString())
+            const timeIndex = weatherData.hourly?.time.findIndex(item => item > currentTime.toISOString())
 
             setTimeIndex(timeIndex)
         }

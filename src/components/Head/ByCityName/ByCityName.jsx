@@ -1,16 +1,16 @@
 import './ByCityName.css'
 import cities from 'cities.json'
 import { useState } from 'react'
-import { useContext } from 'react'
 import Select from 'react-select'
 import { DICT } from '../../../utils/dict'
-import { ContextLocation } from '../../../context/ContextLocation'
-import { ContextLanguage } from '../../../context/ContextLanguage'
+import { useSelector, useDispatch } from 'react-redux'
+import { changeLocationByCityName } from '../../../store/locationSlice'
+
 
 const ByCityName = () => {
+    const dispatch = useDispatch()
 
-    const [, setLocation] = useContext(ContextLocation)
-    const [lang,] = useContext(ContextLanguage)
+    const lang = useSelector((state) => state.language.currentLanguage)
 
     const [input, setInput] = useState('')
 
@@ -39,14 +39,13 @@ const ByCityName = () => {
                 menuIsOpen={input.length > 1}
                 components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                 onChange={(elem) => {
-                    setLocation(prevLocation => ({
-                        ...prevLocation,
+                    dispatch(changeLocationByCityName({
                         city: elem.name,
                         latitude: elem.lat,
                         longitude: elem.lng,
                         countryCode: elem.country,
-                    }),
-                    )
+                    },
+                    ))
                 }}
                 styles={{
                     control: (baseStyles, state) => ({
