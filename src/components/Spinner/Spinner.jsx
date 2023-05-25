@@ -1,10 +1,11 @@
 import './Spinner.css'
 import { DICT } from '../../utils/dict'
 import { useContext } from 'react'
-import { ContextLanguage } from '../../context/ContextLanguage'
+import { useSelector } from 'react-redux'
+
 
 const Spinner = () => {
-    const [lang,] = useContext(ContextLanguage)
+    const lang = useSelector((state) => state.language.currentLanguage)
 
     return (
         <div className='spinner_cntr'>

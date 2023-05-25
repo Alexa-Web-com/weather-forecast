@@ -2,16 +2,15 @@ import './Head.css'
 import cities from 'cities.json'
 import { DICT, languages } from '../../utils/dict'
 import emoji from '../../assets/logo.svg'
-import { useContext } from 'react'
-import { ContextLocation } from '../../context/ContextLocation'
-import { ContextLanguage } from '../../context/ContextLanguage'
 import ByCityName from './ByCityName/ByCityName'
 import ByGeolocation from './ByGeolocation/ByGeolocation'
 import Language from '../Language/Language'
+import { useSelector } from 'react-redux'
+
 
 const Head = () => {
-    const [location,] = useContext(ContextLocation)
-    const [lang,] = useContext(ContextLanguage)
+    const location = useSelector((state) => state.location.currentLocation)
+    const lang = useSelector((state) => state.language.currentLanguage)
 
     return (
         <div className='head__cntr'>

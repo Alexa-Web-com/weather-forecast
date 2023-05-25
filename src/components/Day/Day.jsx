@@ -5,14 +5,11 @@ import WeatherIcon from '../WeatherIcon/WeatherIcon'
 import { getDirectionArr } from '../../utils/getDirectionArr'
 import caretDown from '../../assets/carets/caret-down.svg'
 import caretUp from '../../assets/carets/caret-up.svg'
-import { useContext } from 'react'
-import { ContextWeatherData } from '../../context/ContextWeatherData'
-import { ContextLanguage } from '../../context/ContextLanguage'
+import { useSelector } from 'react-redux'
 
 const Day = (props) => {
-
-    const [weatherData,] = useContext(ContextWeatherData)
-    const [lang,] = useContext(ContextLanguage)
+    const weatherData = useSelector((state) => state.weatherData.currentWeatherData)
+    const lang = useSelector((state) => state.language.currentLanguage)
 
     return (
         <div className='day__wrapper'>
@@ -22,20 +19,20 @@ const Day = (props) => {
                     onClick={() => props.setOpenedDayTab(-1)}
                     style={{ fontWeight: 'bold' }}
                 >
-                    <span>{`${!DICT[lang].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])] ? 'Loading' : DICT[lang].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly.time[props.dayIndex])}`}</span>
+                    <span>{`${!DICT[lang].weekDay[getDay(weatherData?.hourly?.time[props.dayIndex])] ? 'Loading' : DICT[lang].weekDay[getDay(weatherData?.hourly?.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly?.time[props.dayIndex])}`}</span>
                     <img className='day__carets' src={caretUp} alt='caret up' width='20px' fill='mediumvioletred' />
                 </p>
                 :
                 <p className='day__day_details'
                     onClick={() => props.setOpenedDayTab(props.dayIndex)}
                 >
-                    <span>{`${!DICT[lang].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])] ? 'Loading' : DICT[lang].weekDay[getDay(weatherData?.hourly.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly.time[props.dayIndex])}`}</span>
+                    <span>{`${!DICT[lang].weekDay[getDay(weatherData?.hourly?.time[props.dayIndex])] ? 'Loading' : DICT[lang].weekDay[getDay(weatherData?.hourly?.time[props.dayIndex])]}, ${getDateMonth(weatherData?.hourly?.time[props.dayIndex])}`}</span>
                     <img className='day__carets' src={caretDown} alt='caret down' width='20px' />
                 </p>
             }
             {props.openedDayTab === props.dayIndex ?
                 <div className='day__hours_cntr_active'>
-                    {weatherData?.hourly.time.map((item, index) => index % 2 !== 1 && index > props.dayIndex - 1 && index < props.dayIndex + 24
+                    {weatherData?.hourly?.time.map((item, index) => index % 2 !== 1 && index > props.dayIndex - 1 && index < props.dayIndex + 24
                         ?
                         <div className={getHour(item) > 5 && getHour(item) < 19 ? 'day__hour_cntr_day' : 'day__hour_cntr_night'} key={index}>
                             <p className={getHour(item) > 5 && getHour(item) < 19 ? 'day__hour_el_day' : 'day__hour_el_night'}>{getHourMinutes(item)}</p>
