@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "cypress": "^12.13.0",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "redux-mock-store": "^1.5.4"
   }
 }
