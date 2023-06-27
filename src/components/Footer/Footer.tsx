@@ -1,3 +1,4 @@
+import React from 'react'
 import './Footer.css'
 import logoAlexaWeb from '../../assets/logoTransparent.png'
 

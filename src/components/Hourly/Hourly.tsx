@@ -1,3 +1,4 @@
+import React from 'react'
 import './Hourly.css'
 import Day from '../Day/Day'
 import { useEffect, useState } from 'react'
@@ -12,7 +13,7 @@ const Hourly = () => {
         if (openedDayTab !== 0) {
             const scroll = () => {
                 const section = document.getElementById('day');
-                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
             };
             scroll()
         }

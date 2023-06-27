@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+//@ts-ignore
 import AlertTemplate from 'react-alert-template-basic'
 import { store } from './store/store'
 import { Provider } from 'react-redux'
@@ -14,7 +15,8 @@ const options = {
   transition: transitions.SCALE
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root: ReactDOM.Root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>

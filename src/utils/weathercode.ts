@@ -1,4 +1,12 @@
-export const weathercode = {
+interface IWeatherCodeSingleLang {
+    [key: number]: string;
+}
+
+interface IWeatherCode {
+    [key: string]: IWeatherCodeSingleLang;
+}
+
+export const weathercode: IWeatherCode = {
 
     en: {
         0: "Clear sky",
@@ -128,5 +136,4 @@ export const weathercode = {
 
         99: "Burza",
     },
-
 }

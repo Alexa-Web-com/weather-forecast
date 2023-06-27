@@ -1,8 +1,9 @@
+import React from 'react';
 import './App.css';
 import Daily from './components/Daily/Daily';
 import Hourly from './components/Hourly/Hourly';
 import Head from './components/Head/Head';
-import { useGetDataFromUrl } from './utils/useGetDataFromUrl';
+import { IWeatherDataFromUrl, ICoordinatesDataFromUrl, useGetDataFromUrl } from './utils/useGetDataFromUrl';
 import { approxCoordinatesUrl } from './utils/const'
 import { getUrl } from './utils/getUrl'
 import Spinner from './components/Spinner/Spinner';
@@ -11,9 +12,10 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { changeLocationByGeolocation } from './store/locationSlice'
 import { changeWeatherData } from './store/weatherDataSlice'
+import { RootState } from './store/store';
 
-function App() {
-  const location = useSelector((state) => state.location.currentLocation)
+const App = () => {
+  const location = useSelector((state: RootState) => state.location.currentLocation)
   const dispatch = useDispatch()
 
   const [approxCoordinatesData,] = useGetDataFromUrl(approxCoordinatesUrl)
@@ -27,10 +29,11 @@ function App() {
   useEffect(() => {
     if (location.latitude.length === 0 && location.longitude.length === 0) {
       if (approxCoordinatesData) {
-        dispatch(changeLocationByGeolocation({
-          latitude: Number(approxCoordinatesData.latitude).toFixed(2),
-          longitude: Number(approxCoordinatesData.longitude).toFixed(2),
-        }))
+        const approxCoordinates: ICoordinatesDataFromUrl = {
+          latitude: Number((approxCoordinatesData as ICoordinatesDataFromUrl).latitude).toFixed(2),
+          longitude: Number((approxCoordinatesData as ICoordinatesDataFromUrl).longitude).toFixed(2),
+        }
+        dispatch(changeLocationByGeolocation(approxCoordinates))
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -43,8 +46,7 @@ function App() {
       if (weatherDataFromUrl) {
         localStorage.setItem('location', JSON.stringify(location))
       }
-      // setWeatherData(weatherDataFromUrl)
-      dispatch(changeWeatherData(weatherDataFromUrl))
+      dispatch(changeWeatherData(weatherDataFromUrl as IWeatherDataFromUrl))
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [weatherDataFromUrl])

@@ -1,18 +1,37 @@
+import React from 'react'
 import './ByCityName.css'
-import cities from 'cities.json'
+import citiesFromCitiesJson from 'cities.json'
 import { useState } from 'react'
-import Select from 'react-select'
+import Select, { SingleValue } from 'react-select'
 import { DICT } from '../../../utils/dict'
 import { useSelector, useDispatch } from 'react-redux'
 import { changeLocationByCityName } from '../../../store/locationSlice'
+import { RootState } from '../../../store/store'
 
+interface ICities {
+    country: string;
+    lat: string;
+    lng: string;
+    name: string
+}
+
+interface ICitiesElem {
+    country: string;
+    label?: string;
+    lat: string;
+    lng: string;
+    name: string;
+    value?: number;
+}
 
 const ByCityName = () => {
     const dispatch = useDispatch()
 
-    const lang = useSelector((state) => state.language.currentLanguage)
+    const lang = useSelector((state: RootState) => state.language.currentLanguage)
 
     const [input, setInput] = useState('')
+
+    const cities = citiesFromCitiesJson as unknown as ICities[]
 
     const options1 = input.length < 1
         ? []
@@ -35,15 +54,15 @@ const ByCityName = () => {
                 onInputChange={(inputValue) => setInput(inputValue)}
                 options={options1}
                 placeholder={DICT[lang].byCityNamePlaceholder}
-                value=''
                 menuIsOpen={input.length > 1}
                 components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
-                onChange={(elem) => {
+                onChange={(elem: SingleValue<ICitiesElem>) => {
+                    console.log({ elem })
                     dispatch(changeLocationByCityName({
-                        city: elem.name,
-                        latitude: elem.lat,
-                        longitude: elem.lng,
-                        countryCode: elem.country,
+                        city: elem?.name,
+                        latitude: elem?.lat ?? "",
+                        longitude: elem?.lng ?? "",
+                        countryCode: elem?.country,
                     },
                     ))
                 }}

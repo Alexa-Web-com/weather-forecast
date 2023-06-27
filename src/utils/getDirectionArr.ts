@@ -7,8 +7,8 @@ import arrowSW from '../assets/arrows/arrowSW.svg'
 import arrowW from '../assets/arrows/arrowW.svg'
 import arrowNW from '../assets/arrows/arrowNW.svg'
 
-export const getDirectionArr = (degree) => {
-    let direction = ''
+export const getDirectionArr = (degree: number) => {
+    let direction: string | React.FC<React.SVGProps<SVGSVGElement>> = ''
     if (degree < 22) { direction = arrowN }
     else if (degree < 67) { direction = arrowNE }
     else if (degree < 112) { direction = arrowE }
