@@ -8,19 +8,20 @@ import ByGeolocation from './ByGeolocation/ByGeolocation'
 import Language from '../Language/Language'
 import { RootState } from '../../store/store'
 import { useSelector } from 'react-redux'
+import { IGeolocationState } from '../../store/locationSlice'
 
-interface ICity {
+export interface ICity {
     country: string;
     lat: string;
     lng: string;
     name: string;
 }
 
-const Head = () => {
-    const location = useSelector((state: RootState) => state.location.currentLocation)
-    const lang = useSelector((state: RootState) => state.language.currentLanguage)
+const Head = (): JSX.Element => {
+    const location: IGeolocationState = useSelector((state: RootState) => state.location.currentLocation)
+    const lang: string = useSelector((state: RootState) => state.language.currentLanguage)
 
-    const cities = citiesFromLibrary as unknown as ICity[]
+    const cities: ICity[] = citiesFromLibrary as unknown as ICity[]
 
     return (
         <div className='head__cntr'>

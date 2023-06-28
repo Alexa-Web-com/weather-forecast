@@ -1,19 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-interface IGeolocationState {
+export interface IGeolocationState {
     city?: string;
     latitude: string;
     longitude: string;
     countryCode?: string;
 }
 
-interface ILocationState {
+export interface ILocationState {
     currentLocation: IGeolocationState
 }
 
 const initialState: ILocationState = {
-    currentLocation: JSON.parse(localStorage.getItem('location') ?? '')
+    currentLocation: JSON.parse(localStorage.getItem('location') ?? 'null')
         ||
     {
         city: '',

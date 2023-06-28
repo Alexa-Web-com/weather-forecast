@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(91, 62, 115);
+  background-color: rgb(91, 62, 115, 0.2);
   background-image: linear-gradient(to bottom, aqua, rgb(132, 154, 253), rgb(201, 132, 253), rgb(201, 132, 253), rgb(201, 132, 253), rgb(145, 97, 183), rgb(91, 62, 115));
   min-height: 100vh;
 }

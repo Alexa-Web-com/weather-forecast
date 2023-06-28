@@ -7,13 +7,7 @@ import { DICT } from '../../../utils/dict'
 import { useSelector, useDispatch } from 'react-redux'
 import { changeLocationByCityName } from '../../../store/locationSlice'
 import { RootState } from '../../../store/store'
-
-interface ICities {
-    country: string;
-    lat: string;
-    lng: string;
-    name: string
-}
+import { ICity } from '../Head'
 
 interface ICitiesElem {
     country: string;
@@ -24,21 +18,23 @@ interface ICitiesElem {
     value?: number;
 }
 
-const ByCityName = () => {
+const ByCityName = (): JSX.Element => {
     const dispatch = useDispatch()
 
-    const lang = useSelector((state: RootState) => state.language.currentLanguage)
+    const lang: string = useSelector((state: RootState) => state.language.currentLanguage)
 
-    const [input, setInput] = useState('')
+    const [input, setInput] = useState<string>('')
 
-    const cities = citiesFromCitiesJson as unknown as ICities[]
+    const cities: ICity[] = citiesFromCitiesJson as unknown as ICity[]
 
-    const options1 = input.length < 1
-        ? []
-        : cities
-            .filter(city => city.name.toLowerCase().includes(input.toLowerCase()) || city.country.toLowerCase().includes(input.toLowerCase()))
+    const options1: ICitiesElem[] = input.length < 1
+        ?
+        []
+        :
+        cities
+            .filter((city: ICity) => city.name.toLowerCase().includes(input.toLowerCase()) || city.country.toLowerCase().includes(input.toLowerCase()))
             .slice(0, 30)
-            .map((city, index) => ({
+            .map((city: ICity, index: number) => ({
                 value: index,
                 label: `${city.name}, ${city.country}`,
                 name: city.name,

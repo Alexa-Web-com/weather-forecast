@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useAlert } from 'react-alert'
+import { AlertContainer, useAlert } from 'react-alert'
 
 export interface ICoordinatesDataFromUrl {
     latitude: string;
@@ -17,7 +17,6 @@ export interface IWeatherDataFromUrlDaily {
     sunset: string[];
     apparent_temperature_min: number[];
     apparent_temperature_max: number[];
-
 }
 
 export interface IWeatherDataFromUrlHourly {
@@ -50,18 +49,17 @@ export interface IWeatherDataFromUrl {
 
 export const useGetDataFromUrl = (url: string): [ICoordinatesDataFromUrl | IWeatherDataFromUrl | undefined, boolean] => {
     const [dataFromUrl, setDataFromUrl] = useState<ICoordinatesDataFromUrl | IWeatherDataFromUrl | undefined>()
-    const [isSpinner, setIsSpinner] = useState(false)
+    const [isSpinner, setIsSpinner] = useState<boolean>(false)
 
-    const alert = useAlert()
+    const alert: AlertContainer = useAlert()
 
     useEffect(() => {
-        const getDataAsync = async () => {
+        const getDataAsync: () => Promise<void> = async () => {
             setIsSpinner(true)
             try {
-                const res = await fetch(url)
-                const data = await res.json()
+                const res: Response = await fetch(url)
+                const data: ICoordinatesDataFromUrl | IWeatherDataFromUrl = await res.json()
                 setDataFromUrl(data)
-                // TODO - any
             } catch (err: any) {
                 console.log('error! ', err.message);
                 alert.error(err.message)

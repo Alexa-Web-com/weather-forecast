@@ -9,9 +9,9 @@ interface ILanguageProps {
     language: string;
 }
 
-const Language = (props: ILanguageProps) => {
+const Language = (props: ILanguageProps): JSX.Element => {
 
-    const lang = useSelector((state: RootState) => state.language.currentLanguage)
+    const lang: string = useSelector((state: RootState) => state.language.currentLanguage)
     const dispatch = useDispatch()
 
     return (
@@ -19,7 +19,7 @@ const Language = (props: ILanguageProps) => {
             onClick={() => dispatch(changeLanguage(props.language))}
             style={{
                 backgroundColor: props.language === lang ? 'rgb(145, 97, 183)' : 'transparent',
-                color: props.language === lang ? 'white' : 'transparent',
+                color: props.language === lang ? 'white' : 'black',
             }}
         >{props.language.toUpperCase()}</p>
     )

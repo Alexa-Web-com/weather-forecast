@@ -10,18 +10,18 @@ import WeatherIcon from '../WeatherIcon/WeatherIcon'
 import { getDirectionArr } from '../../utils/getDirectionArr'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
+import { IWeatherDataFromUrl } from '../../utils/useGetDataFromUrl'
 
-const Daily = () => {
+const Daily = (): JSX.Element => {
     const [timeIndex, setTimeIndex] = useState<number | undefined>()
 
-    const weatherData = useSelector((state: RootState) => state.weatherData.currentWeatherData)
-    const lang = useSelector((state: RootState) => state.language.currentLanguage)
+    const weatherData: IWeatherDataFromUrl | undefined = useSelector((state: RootState) => state.weatherData.currentWeatherData)
+    const lang: string = useSelector((state: RootState) => state.language.currentLanguage)
 
     useEffect(() => {
         if (weatherData?.hourly?.time) {
-            const currentTime = new Date()
-            const timeIndex = weatherData.hourly?.time.findIndex(item => item > currentTime.toISOString())
-
+            const currentTime: Date = new Date()
+            const timeIndex: number = weatherData.hourly.time.findIndex((item: string) => item > currentTime.toISOString())
             setTimeIndex(timeIndex)
         }
     }, [weatherData])

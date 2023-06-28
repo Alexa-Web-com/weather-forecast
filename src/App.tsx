@@ -10,12 +10,12 @@ import Spinner from './components/Spinner/Spinner';
 import Footer from './components/Footer/Footer';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { changeLocationByGeolocation } from './store/locationSlice'
+import { IGeolocationState, changeLocationByGeolocation } from './store/locationSlice'
 import { changeWeatherData } from './store/weatherDataSlice'
 import { RootState } from './store/store';
 
-const App = () => {
-  const location = useSelector((state: RootState) => state.location.currentLocation)
+const App = (): JSX.Element => {
+  const location: IGeolocationState = useSelector((state: RootState) => state.location.currentLocation)
   const dispatch = useDispatch()
 
   const [approxCoordinatesData,] = useGetDataFromUrl(approxCoordinatesUrl)

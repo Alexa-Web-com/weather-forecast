@@ -7,13 +7,9 @@ import cloudRainHeavyIcon from "../../assets/icons/cloud-rain-heavy.svg"
 import cloudRainIcon from "../../assets/icons/cloud-rain.svg"
 import cloudSleetIcon from "../../assets/icons/cloud-sleet.svg"
 import cloudSnowIcon from "../../assets/icons/cloud-snow.svg"
-//@ts-ignore
-import { ReactComponent as CloudSunIcon } from "../../assets/icons/cloud-sun.svg"
 import cloudSunIcon from "../../assets/icons/cloud-sun.svg"
-//@ts-ignore
-import { ReactComponent as MoonIcon } from "../../assets/icons/moon.svg"
-//@ts-ignore
-import { ReactComponent as SunIcon } from "../..//assets/icons/sun.svg"
+import moonIcon from "../../assets/icons/moon.svg"
+import sunIcon from "../..//assets/icons/sun.svg"
 
 import './WeatherIcon.css'
 
@@ -25,11 +21,12 @@ interface IWeatherIcon {
 }
 
 const WeatherIcon = (props: IWeatherIcon): JSX.Element => {
+
     let weatherIcon: string | React.FC<React.SVGProps<SVGSVGElement>> = ''
 
     switch (props.weathercode) {
         case 0:
-            weatherIcon = props.hour > 5 && props.hour < 19 ? SunIcon : MoonIcon
+            weatherIcon = props.hour > 5 && props.hour < 19 ? sunIcon : moonIcon
             break;
         case 1:
             weatherIcon = props.hour > 5 && props.hour < 19 ? cloudSunIcon : cloudMoonIcon
@@ -116,9 +113,11 @@ const WeatherIcon = (props: IWeatherIcon): JSX.Element => {
             break;
     }
 
-    return <img style={{ fill: props.fill ? props.fill : 'black', width: props.width ? props.width : '2rem' }} src={weatherIcon as string} alt=''></img>
-
-    // <WeatherIconComp style={{ fill: props.fill ? props.fill : 'black', width: props.width ? props.width : '2rem' }} />
+    return <img
+        style={{ fill: props.fill ? props.fill : 'black', width: props.width ? props.width : '2rem' }}
+        src={weatherIcon as string}
+        alt='weather icon'>
+    </img>
 }
 
 export default WeatherIcon
