@@ -1,7 +1,8 @@
+import React from 'react'
 import './Footer.css'
 import logoAlexaWeb from '../../assets/logoTransparent.png'
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
     return (
         <small className='footer'>
             <p>Copyright © 2023 </p>

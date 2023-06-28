@@ -1,25 +1,40 @@
+import React from 'react'
 import './ByCityName.css'
-import cities from 'cities.json'
+import citiesFromCitiesJson from 'cities.json'
 import { useState } from 'react'
-import Select from 'react-select'
+import Select, { SingleValue } from 'react-select'
 import { DICT } from '../../../utils/dict'
 import { useSelector, useDispatch } from 'react-redux'
 import { changeLocationByCityName } from '../../../store/locationSlice'
+import { RootState } from '../../../store/store'
+import { ICity } from '../Head'
 
+interface ICitiesElem {
+    country: string;
+    label?: string;
+    lat: string;
+    lng: string;
+    name: string;
+    value?: number;
+}
 
-const ByCityName = () => {
+const ByCityName = (): JSX.Element => {
     const dispatch = useDispatch()
 
-    const lang = useSelector((state) => state.language.currentLanguage)
+    const lang: string = useSelector((state: RootState) => state.language.currentLanguage)
 
-    const [input, setInput] = useState('')
+    const [input, setInput] = useState<string>('')
 
-    const options1 = input.length < 1
-        ? []
-        : cities
-            .filter(city => city.name.toLowerCase().includes(input.toLowerCase()) || city.country.toLowerCase().includes(input.toLowerCase()))
+    const cities: ICity[] = citiesFromCitiesJson as unknown as ICity[]
+
+    const options1: ICitiesElem[] = input.length < 1
+        ?
+        []
+        :
+        cities
+            .filter((city: ICity) => city.name.toLowerCase().includes(input.toLowerCase()) || city.country.toLowerCase().includes(input.toLowerCase()))
             .slice(0, 30)
-            .map((city, index) => ({
+            .map((city: ICity, index: number) => ({
                 value: index,
                 label: `${city.name}, ${city.country}`,
                 name: city.name,
@@ -35,15 +50,15 @@ const ByCityName = () => {
                 onInputChange={(inputValue) => setInput(inputValue)}
                 options={options1}
                 placeholder={DICT[lang].byCityNamePlaceholder}
-                value=''
                 menuIsOpen={input.length > 1}
                 components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
-                onChange={(elem) => {
+                onChange={(elem: SingleValue<ICitiesElem>) => {
+                    console.log({ elem })
                     dispatch(changeLocationByCityName({
-                        city: elem.name,
-                        latitude: elem.lat,
-                        longitude: elem.lng,
-                        countryCode: elem.country,
+                        city: elem?.name,
+                        latitude: elem?.lat ?? "",
+                        longitude: elem?.lng ?? "",
+                        countryCode: elem?.country,
                     },
                     ))
                 }}

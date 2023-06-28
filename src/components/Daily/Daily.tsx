@@ -1,3 +1,4 @@
+import React from 'react'
 import './Daily.css'
 import sunriseIcon from '../../assets/icons/sunrise.svg'
 import sunsetIcon from '../../assets/icons/sunset.svg'
@@ -8,18 +9,19 @@ import { useEffect, useState, } from 'react'
 import WeatherIcon from '../WeatherIcon/WeatherIcon'
 import { getDirectionArr } from '../../utils/getDirectionArr'
 import { useSelector } from 'react-redux'
+import { RootState } from '../../store/store'
+import { IWeatherDataFromUrl } from '../../utils/useGetDataFromUrl'
 
-const Daily = () => {
-    const [timeIndex, setTimeIndex] = useState()
+const Daily = (): JSX.Element => {
+    const [timeIndex, setTimeIndex] = useState<number | undefined>()
 
-    const weatherData = useSelector((state) => state.weatherData.currentWeatherData)
-    const lang = useSelector((state) => state.language.currentLanguage)
+    const weatherData: IWeatherDataFromUrl | undefined = useSelector((state: RootState) => state.weatherData.currentWeatherData)
+    const lang: string = useSelector((state: RootState) => state.language.currentLanguage)
 
     useEffect(() => {
         if (weatherData?.hourly?.time) {
-            const currentTime = new Date()
-            const timeIndex = weatherData.hourly?.time.findIndex(item => item > currentTime.toISOString())
-
+            const currentTime: Date = new Date()
+            const timeIndex: number = weatherData.hourly.time.findIndex((item: string) => item > currentTime.toISOString())
             setTimeIndex(timeIndex)
         }
     }, [weatherData])
@@ -27,7 +29,10 @@ const Daily = () => {
 
     return (
         <div className='daily' >
-            {weatherData &&
+            {weatherData
+                &&
+                timeIndex
+                &&
                 <div className='daily__cntr' >
                     <div className='daily__general_cntr'>
                         <h2 className='daily__general_desc'>{DICT[lang].dailyCurrentWeather}</h2>
@@ -61,14 +66,14 @@ const Daily = () => {
                     <div className='daily__details_cntr'>
                         <div className='daily__details_sun'>
                             <div className='daily__details_sun_elem'>
-                                <img src={sunriseIcon} alt='weather imaging' className='daily_details_elem_icon' />
+                                <img src={sunriseIcon as unknown as string} alt='weather imaging' className='daily_details_elem_icon' />
                                 <div>
                                     <p >{DICT[lang].dailySunrise}</p>
                                     <p className='daily__params_value'>{getHourMinutes(weatherData.daily?.sunrise[0])}</p>
                                 </div>
                             </div>
                             <div className='daily__details_sun_elem'>
-                                <img src={sunsetIcon} alt='weather imaging' className='daily_details_elem_icon' />
+                                <img src={sunsetIcon as unknown as string} alt='weather imaging' className='daily_details_elem_icon' />
 
                                 <div>
                                     <p>{DICT[lang].dailySunset}</p>
@@ -90,7 +95,7 @@ const Daily = () => {
                                 <p><span className='daily__params_value'>{weatherData.daily?.apparent_temperature_max[0]}</span><span className='hourly_units.temperature_2m daily__params_value'> {weatherData.hourly_units?.temperature_2m}</span></p>
                                 <p><span className='daily__params_value'>{weatherData.hourly?.pressure_msl[timeIndex]}</span><span className='hourly_units.pressure_msl daily__params_value'> {weatherData.hourly_units?.pressure_msl}</span></p>
                                 <p><span className='daily__params_value'>{weatherData.hourly?.windspeed_10m[timeIndex]}</span><span className='windspeed_10m daily__params_value'> {weatherData.hourly_units?.windspeed_10m} </span>
-                                    <img src={getDirectionArr(weatherData.hourly?.winddirection_10m[timeIndex])} alt='wind direction arrow' />
+                                    <img src={getDirectionArr(weatherData.hourly?.winddirection_10m[timeIndex]) as unknown as string} alt='wind direction arrow' />
                                 </p>
                                 <p><span className='daily__params_value'>{weatherData.hourly?.precipitation[timeIndex]}</span><span className='hourly_units.precipitation daily__params_value'> {weatherData.hourly_units?.precipitation}</span></p>
                                 <p><span className='daily__params_value'>{weatherData.hourly?.precipitation_probability[timeIndex]}</span><span className='hourly_units.precipitation_probability daily__params_value'> {weatherData.hourly_units?.precipitation_probability}</span></p>

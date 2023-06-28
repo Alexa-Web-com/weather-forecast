@@ -1,11 +1,11 @@
+import React from 'react'
 import './Spinner.css'
 import { DICT } from '../../utils/dict'
-import { useContext } from 'react'
 import { useSelector } from 'react-redux'
+import { RootState } from '../../store/store'
 
-
-const Spinner = () => {
-    const lang = useSelector((state) => state.language.currentLanguage)
+const Spinner = (): JSX.Element => {
+    const lang: string = useSelector((state: RootState) => state.language.currentLanguage)
 
     return (
         <div className='spinner_cntr'>

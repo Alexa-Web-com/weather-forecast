@@ -1,7 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
 
-const initialState = {
-    currentLocation: JSON.parse(localStorage.getItem('location'))
+export interface IGeolocationState {
+    city?: string;
+    latitude: string;
+    longitude: string;
+    countryCode?: string;
+}
+
+export interface ILocationState {
+    currentLocation: IGeolocationState
+}
+
+const initialState: ILocationState = {
+    currentLocation: JSON.parse(localStorage.getItem('location') ?? 'null')
         ||
     {
         city: '',
@@ -15,7 +27,7 @@ export const locationSlice = createSlice({
     name: 'location',
     initialState,
     reducers: {
-        changeLocationByCityName: (state, action) => {
+        changeLocationByCityName: (state, action: PayloadAction<IGeolocationState>) => {
             state.currentLocation = {
                 city: action.payload.city,
                 latitude: action.payload.latitude,
@@ -24,7 +36,7 @@ export const locationSlice = createSlice({
             }
         },
 
-        changeLocationByGeolocation: (state, action) => {
+        changeLocationByGeolocation: (state, action: PayloadAction<IGeolocationState>) => {
             state.currentLocation = {
                 city: '',
                 latitude: action.payload.latitude,
@@ -36,5 +48,4 @@ export const locationSlice = createSlice({
 })
 
 export const { changeLocationByCityName, changeLocationByGeolocation } = locationSlice.actions
-
 export default locationSlice.reducer

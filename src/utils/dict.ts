@@ -1,6 +1,42 @@
-export const languages = ['en', 'es', 'pl']
+export const languages: string[] = ['en', 'es', 'pl']
 
-export const DICT = {
+interface IWeekDay {
+    [key: number]: string;
+}
+
+interface ILang {
+    headTitle: string;
+    headYourCity: string;
+    headYourCoordinates: string;
+    latitude: string;
+    longitude: string;
+
+    byCityNamePlaceholder: string;
+
+    dailyCurrentWeather: string;
+    dailyTemperature: string;
+    dailyApparentTemperature: string;
+
+    dailySunrise: string;
+    dailySunset: string;
+
+    dailyApparentTemperatureMin: string;
+    dailyApparentTemperatureMax: string;
+    dailyPressure: string;
+    dailyWind: string;
+    dailyPrecipitation: string;
+    dailyPrecipitationProbability: string;
+
+    weekDay: IWeekDay;
+
+    spinnerText: string;
+}
+
+interface IDict {
+    [key: string]: ILang
+}
+
+export const DICT: IDict = {
     en: {
         headTitle: "Your weather",
         headYourCity: "Your city:",
