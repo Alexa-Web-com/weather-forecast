@@ -53,7 +53,6 @@ const ByCityName = (): JSX.Element => {
                 menuIsOpen={input.length > 1}
                 components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                 onChange={(elem: SingleValue<ICitiesElem>) => {
-                    console.log({ elem })
                     dispatch(changeLocationByCityName({
                         city: elem?.name,
                         latitude: elem?.lat ?? "",
