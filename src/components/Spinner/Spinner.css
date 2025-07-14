@@ -1,6 +1,6 @@
 .spinner_cntr {
-    background: rgb(201, 132, 253);
-    background-image: linear-gradient(to bottom, aqua, rgb(132, 154, 253), rgb(201, 132, 253), rgb(201, 132, 253), rgb(201, 132, 253), rgb(145, 97, 183), rgb(91, 62, 115));
+    background: #e5e5e5;
+    /* background-image: linear-gradient(to bottom, aqua, rgb(132, 154, 253), rgb(201, 132, 253), rgb(201, 132, 253), rgb(201, 132, 253), rgb(145, 97, 183), rgb(91, 62, 115)); */
     max-width: 1024px;
     margin: auto;
     display: flex;
@@ -11,13 +11,9 @@
 }
 
 .spinner_img {
-    /* border: 1.5rem solid rgb(214, 250, 163);
-    border-top: 1.5rem solid rgb(77, 22, 130); */
-    border: 3rem solid rgb(214, 250, 163);
-    border-top: 3rem solid rgb(77, 22, 130);
+    border: 3rem solid #32d9cb;
+    border-top: 3rem solid #ffb33f;
     border-radius: 50%;
-    /* width: 6rem;
-    height: 6rem; */
     width: 6rem;
     height: 6rem;
     animation: spin 2s linear infinite;
