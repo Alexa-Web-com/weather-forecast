@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/weather-forecast/static/css/main.ad1cc250.css",
-    "main.js": "/weather-forecast/static/js/main.98a111eb.js",
+    "main.css": "/weather-forecast/static/css/main.b371de5a.css",
+    "main.js": "/weather-forecast/static/js/main.526e4d9e.js",
     "static/media/logoTransparent.png": "/weather-forecast/static/media/logoTransparent.75cab1c32aadf5f97da8.png",
     "static/media/cloud-snow.svg": "/weather-forecast/static/media/cloud-snow.b94593c9666f4964a7f6801ca3f4cf64.svg",
     "static/media/cloud-sleet.svg": "/weather-forecast/static/media/cloud-sleet.307defc75b8e39b919fa2c714ce3f990.svg",
@@ -10,12 +10,11 @@
     "static/media/cloud-lightning-rain.svg": "/weather-forecast/static/media/cloud-lightning-rain.cbd38fa56e4df73c9b34bc7e0c203870.svg",
     "static/media/cloud-sun.svg": "/weather-forecast/static/media/cloud-sun.6ddbedb3259a153f5df23f3169b0841c.svg",
     "static/media/sun.svg": "/weather-forecast/static/media/sun.ec40e8ef876b6b89f0259f26cbbaa750.svg",
+    "static/media/sunrise.svg": "/weather-forecast/static/media/sunrise.ac9b726c9ee4bf52452b5ec7ae920ca0.svg",
     "static/media/cloud-drizzle.svg": "/weather-forecast/static/media/cloud-drizzle.3894dffbcef2b36f8ec9dc891f5f8f60.svg",
-    "static/media/sunrise.svg": "/weather-forecast/static/media/sunrise.cdf9a42e35d11e7f992938426f74e5f5.svg",
-    "static/media/sunset.svg": "/weather-forecast/static/media/sunset.d1c9042d7fdb00a9285f614dc552871d.svg",
+    "static/media/sunset.svg": "/weather-forecast/static/media/sunset.a225b70b79f9b978470202e618d48de7.svg",
     "static/media/cloud-rain-heavy.svg": "/weather-forecast/static/media/cloud-rain-heavy.446f2c29f7e0012243438e036fad42a7.svg",
     "static/media/cloud-rain.svg": "/weather-forecast/static/media/cloud-rain.307cedd06e5d67bc691e8359e72e5c3e.svg",
-    "static/media/logo.svg": "/weather-forecast/static/media/logo.d708d580f2a4855ad1889c4db4074b32.svg",
     "static/media/location.svg": "/weather-forecast/static/media/location.299126e774aad36e981dc5983133c3e9.svg",
     "static/media/cloud-moon.svg": "/weather-forecast/static/media/cloud-moon.32df3874ae27ff71bbece9b42482e496.svg",
     "static/media/cloud-fog.svg": "/weather-forecast/static/media/cloud-fog.59a55518d678472934789172ef39e2fc.svg",
@@ -29,11 +28,11 @@
     "static/media/arrowNE.svg": "/weather-forecast/static/media/arrowNE.c28bd5d050d4d4b620f1476dc2558827.svg",
     "static/media/arrowSW.svg": "/weather-forecast/static/media/arrowSW.0ed0c5eedf19dfbfcf684a0a1bafe1b5.svg",
     "static/media/arrowNW.svg": "/weather-forecast/static/media/arrowNW.0f6eb346ea35f241ce4f87b75a1741c0.svg",
-    "main.ad1cc250.css.map": "/weather-forecast/static/css/main.ad1cc250.css.map",
-    "main.98a111eb.js.map": "/weather-forecast/static/js/main.98a111eb.js.map"
+    "main.b371de5a.css.map": "/weather-forecast/static/css/main.b371de5a.css.map",
+    "main.526e4d9e.js.map": "/weather-forecast/static/js/main.526e4d9e.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad1cc250.css",
-    "static/js/main.98a111eb.js"
+    "static/css/main.b371de5a.css",
+    "static/js/main.526e4d9e.js"
   ]
 }
