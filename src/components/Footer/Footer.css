@@ -1,6 +1,6 @@
 .footer {
     padding-right: 0.2rem;
-    color: white;
+    color: black;
     font-size: 0.8rem;
     text-align: center;
     margin-top: 1rem;
@@ -12,7 +12,7 @@
 .footer_link {
     display: flex;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .footer_logo {

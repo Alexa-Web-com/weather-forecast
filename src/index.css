@@ -6,7 +6,6 @@
 }
 
 body {
-  background-color: white;
-  background-image: linear-gradient(to bottom, white, rgb(116, 253, 253), rgb(158, 175, 253), rgb(245, 159, 254));
+  background-color: #e5e5e5;
   min-height: 100vh;
 }

@@ -18,7 +18,7 @@ const Language = (props: ILanguageProps): JSX.Element => {
         <p className='head__language_el'
             onClick={() => dispatch(changeLanguage(props.language))}
             style={{
-                backgroundColor: props.language === lang ? 'rgb(145, 97, 183)' : 'transparent',
+                backgroundColor: props.language === lang ? '#00a6c0' : 'transparent',
                 color: props.language === lang ? 'white' : 'black',
             }}
         >{props.language.toUpperCase()}</p>

@@ -6,8 +6,8 @@
 
 .day__day_details,
 .day__day_details_opened {
-    background-color: rgb(91, 251, 166);
-    border: 1px solid blueviolet;
+    background-color: #cacaca;
+    border: 1px solid #5f7174;
     border-radius: 0.2rem;
     height: 1.5rem;
     width: 100%;
@@ -18,12 +18,12 @@
 }
 
 .day__day_details_opened {
-    background-color: rgb(195, 245, 126);
-    border: 2px solid blueviolet;
+    background-color: #ffb33f;
+    border: 2px solid #5f7174;
 }
 
 .day__day_details:hover {
-    border: 2px solid blueviolet;
+    border: 2px solid #5f7174;
 }
 
 .day__carets {
@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border: 1px solid blue;
+    border: 1px solid #5f7174;
     border-radius: 0.2rem;
     margin: 0.1rem;
     width: 100%;
@@ -63,7 +63,7 @@
 }
 
 .day__hour_cntr_night {
-    background-color: rgb(202, 202, 202);
+    background-color: #cacaca;
 }
 
 .day__hour_el_day,
@@ -73,15 +73,15 @@
 }
 
 .day__hour_el_day {
-    background-color: rgb(33, 154, 220);
+    background-color: #32d9cb;
 }
 
 .day__hour_el_night {
-    background-color: rgb(77, 22, 130);
+    background-color: #00a6c0;
 }
 
 .day__precipitation_el {
-    background-color: lavender;
+    background-color: #e7eded;
     font-size: 0.8rem;
     border-radius: 0.5rem;
     height: 1.2rem;

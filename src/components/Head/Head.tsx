@@ -30,7 +30,7 @@ const Head = (): JSX.Element => {
                     <Language key={language} language={language} />
                 )}
             </div>
-            <h1 className='head__title'><span>{DICT[lang].headTitle} </span><img src={emoji as unknown as string} alt='emoji' width='18rem' /></h1>
+            <h1 className='head__title'><span>{DICT[lang].headTitle} </span><span className='head__emoji'>😎</span></h1>
             <div className='head__city_wrapper'>
                 <div className='head__find_city_cntr'>
                     <ByCityName />
